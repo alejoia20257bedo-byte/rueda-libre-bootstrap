@@ -11,22 +11,31 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <div id="main-title">
-                <a href="./index.html">Rueda Libre</a>
-            </div>
-
-            <button class="burger-toggle" id="burger-toggle" aria-label="Abrir menú" aria-expanded="false">
-                ☰
-            </button>
-
-            <ul class="nav-links" id="nav-links">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./tarifas.html">Tarifas</a></li>
-                <li><a href="./reservas.html">Reservas</a></li>
-            </ul>
-            <div class="nav-right">
-                <button class="new-button" type="button"><a href="/reservas.html">Nuevo</a></button>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <img src="resources/images/icon.png" alt="icon" class="icon">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./tarifas.html">Tarifas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./reservas.html">Reservas</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
             </div>
         </nav>
         <br><br>
