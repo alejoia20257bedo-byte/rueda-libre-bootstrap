@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/resources/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div id="main-title">
+                <a href="/index.html">Rueda Libre</a>
+            </div>
+
+            <button class="burger-toggle" id="burger-toggle" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/tarifas.html">Tarifas</a></li>
+                <li><a href="/reservas.html">Reservas</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="new-button" type="button"><a href="/reservas.html">Nuevo</a></button>
+            </div>
+        </nav>
+        <br><br>
+
+        <div id="header-content">
+            <p>
+                ¡Bienvenido a Rueda Libre! Alquiler de bicicletas y
+                los mejores recorridos guiados para descubrir Medellín sobre dos ruedas.
+                <a href="/index.html">¿Quiénes somos?</a>
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section class="formulario-reservas">
+            <h2>Formulario de reservas:</h2>
+        </section>
+
+        <div>
+            <!-- All fields and the submit button are now inside ONE form -->
+            <form action="/reservas.html" method="POST" class="reservation-form">
+                <fieldset>
+                    <legend>Tus datos</legend>
+                    <div>
+                        <label for="name">Nombre completo: </label>
+                        <input type="text" id="name" name="name" required minlength="3" maxlength="50">
+                    </div>
+
+                    <div>
+                        <label for="document">Número de documento: </label>
+                        <input type="text" id="document" name="document" required minlength="6" maxlength="10"
+                            pattern="[0-9]+">
+                    </div>
+
+                    <div>
+                        <label for="email">Correo electrónico: </label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div>
+                        <label for="celular">Celular: </label>
+                        <input type="tel" id="celular" name="celular" required pattern="^3[0-9]{8,9}$"
+                            placeholder="3001234567">
+                    </div>
+
+                    <div>
+                        <label for="date">Fecha del alquiler: </label>
+                        <input type="date" id="date" name="date" required min="2026-11-01" max="2026-12-31">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tu alquiler</legend>
+                    <div>
+                        <label for="bikeType">Tipo de bicicleta: </label>
+                        <select name="bikeType" id="bikeType" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="urbana">Urbana</option>
+                            <option value="montana">Montaña</option>
+                            <option value="electrica">Eléctrica</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="plan">Plan: </label>
+                        <select name="plan" id="plan" required>
+                            <option value="" disabled selected>Selecciona un plan</option>
+                            <option value="1h">1 hora</option>
+                            <option value="medio-dia">Medio día</option>
+                            <option value="dia-completo">Día completo</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="quantity">Cantidad de bicicletas: </label>
+                        <input type="number" id="quantity" name="quantity" required min="1" max="10" value="1">
+                    </div>
+
+                    <div>
+                        <label for="guidedTour">Recorrido guiado: </label>
+                        <select name="guidedTour" id="guidedTour">
+                            <option value="ninguno">Ninguno</option>
+                            <option value="rio-parques">Río y Parques</option>
+                            <option value="amores-barrio">Amores de Barrio</option>
+                            <option value="reto-palmas">Reto Las Palmas</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="comments">Comentarios: </label>
+                        <textarea name="comments" id="comments" cols="30" rows="5" maxlength="300"></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset class="confirmation">
+                    <legend>Confirmación</legend>
+
+                    <div class="terms-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Acepto los términos y condiciones</label>
+                    </div>
+
+                    <input type="submit" class="submit-btn" value="Enviar">
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <br><br><br>
+
+    <a href="https://wa.me/573001234567" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        💬
+    </a>
+
+    <footer>
+        <div class="footer-content">
+            <h2 id="encuentranos">Encuéntranos</h2>
+            <div>
+                <p>© 2026 Rueda Libre. Todos los derechos reservados.</p>
+                <p>Ubicación: Circular 4 # 71-45, Laureles, Medellín (cerca de la estación Estadio).</p>
+                <p>Horarios: Lunes a sábado de 7:00 a.m. a 7:00 p.m. | Domingos y festivos de 6:30 a.m. a 5:00 p.m.</p>
+                <p>Contacto: +57 (300) 123-4567 | <a
+                        href="mailto:contacto@ruedalibre.com.co">contacto@ruedalibre.com.co</a> |
+                    @RuedaLibreMedellin</p>
+            </div>
+        </div>
+
+        <div>
+            <p><a href="https://maps.app.goo.gl/RLCoxQNqv8WT2ADE7" target="_blank" rel="noopener noreferrer">Ver
+                    ubicación en el mapa
+                </a></p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.343423984637!2d-75.5882881!3d6.2193664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429e1dab04e05%3A0x5a77c25c8a5faf3a!2sDe%20Moda%20Outlet!5e0!3m2!1sen!2sco!4v1792768616516!5m2!1sen!2sco"
+                width="700" height="450" style="border: 0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
