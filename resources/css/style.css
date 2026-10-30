@@ -1,7 +1,157 @@
-.icon {
-    width:150px;
+/* Declaring variables */
+:root {
+  /* ==========================================
+     1. Paleta de 5 colores
+     ========================================== */
+  --color-primary: #2563eb;       /* Azul principal */
+  --color-secondary: #6668d8;     /* Verde azulado secundario */
+  --color-accent: #67b13c;        /* Ámbar para llamadas a la acción */
+  --color-dark: #0b192f;          /* Texto principal / fondo oscuro */
+  --color-light: #f8fafc;         /* Fondos claros / tarjetas */
+
+  /* ==========================================
+     2. Familias tipográficas con fuentes de respaldo (fallbacks)
+     ========================================== */
+  /* Tipografía para encabezados/títulos */
+  --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Tipografía para cuerpo de texto */
+  --font-body: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+
+  /* ==========================================
+     3. Escala de espaciado en rem (al menos 3 tamaños)
+     Base: 1rem = 16px por defecto en la mayoría de navegadores
+     ========================================== */
+  --space-sm: 0.5rem;   /*  8px - Espaciados mínimos o padding interno */
+  --space-md: 1rem;     /* 16px - Separación base entre elementos */
+  --space-lg: 1.5rem;   /* 24px - Márgenes de sección medianos */
+  --space-xl: 2.5rem;   /* 40px - Separación amplia entre bloques */
 }
-.welcome-message {
-    text-align: center;
-    font-size:1.2rem;
+
+/* ==========================================
+   Base Styles (Inheritance & Typography)
+   ========================================== */
+* {
+  box-sizing: border-box;
 }
+/* --------------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- */
+/* Index.html */
+/* 1. Header Shell: Give it depth or a local vibe */
+.hero-section {
+  background: linear-gradient(135deg, #105191 0%, #e9ecef 100%);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+/* 2. Typography Hierarchy: Ditch raw <br> tags for structured elements */
+.hero-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3.25rem); /* Scales fluidly with screen size */
+  color: var(--rl-dark);
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #495057;
+  max-width: 55ch; /* Keeps line length comfortable for reading */
+}
+
+/* 3. Interactive Call to Action */
+.hero-cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-primary);
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.hero-cta:hover {
+  color: var(--color-dark);
+  border-bottom-color: var(--color-primary);
+  transform: translateX(4px); /* Subtle nudge */
+}
+/* ----------------------------------------------------------------------------- */
+/* Quienes somos */
+.quienes-somos {
+    background: linear-gradient(135deg, #eff0f0 0%, #d7dadc 100%);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.title-quienes-somos {
+    font-family: var(--font-heading, sans-serif);
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    color: var(--rl-dark, #1b1f23);
+    margin-bottom: 1rem;
+}
+
+.content-quienes-somos {
+    font-family: var(--font-body, sans-serif);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #212529; /* Slightly darker/clearer for readability */
+    max-width: 55ch;
+}
+
+.quienes-somos-img {
+    max-height: 420px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ------------------------------------------------------------------------------- */
+footer {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  padding: var(--space-xl);
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically centers the text block against the map */
+  gap: var(--space-xl); /* Clean separation between the two columns */
+  flex-wrap: wrap;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns all child elements to the left */
+  text-align: left; /* Left-aligns multi-line text */
+  max-width: 480px; /* Keeps text lines readable */
+  padding: var(--space-sm);
+}
+
+#encuentranos {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-dark);
+  margin-bottom: var(--space-md);
+  align-items: center;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: var(--space-sm) 0;
+  line-height: 1.5;
+}
+
+/* Optional cleanup for the map wrapper */
+footer > div:last-child {
+  text-align: right; /* Aligns the "Ver ubicación" link to the map edge */
+}
+
+footer iframe {
+  border: 0;
+  border-radius: 8px;
+  display: block;
+  max-width: 100%;
+}
+/* ----------------------------------------------------------------------------------- */

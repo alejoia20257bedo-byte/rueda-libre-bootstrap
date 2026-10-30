@@ -10,75 +10,80 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid ">
-                <img src="resources/images/icon.png" alt="icon" class="icon">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./tarifas.html">Tarifas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./reservas.html">Reservas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./reservas.html">Nuevo</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit" ;>Buscar</button>
-                    </form>
-                </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="resources/images/icon.png" alt="icon" class="icon">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Added w-100 to fill the available width -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./tarifas.html">Tarifas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./reservas.html">Reservas</a>
+                    </li>
+                    <!-- ms-auto pushes this item to the far right on large screens -->
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-black " href="./reservas.html">Nuevo</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <br><br>
-
-        <div class="container welcome-message">
-            <!-- Content here -->
-            <p>
-                ¡Bienvenido a Rueda Libre! Alquiler de bicicletas y
-                los mejores recorridos guiados para descubrir Medellín sobre dos ruedas.
-                <a href="#quienes-somos">¿Quiénes somos?</a>
-            </p>
         </div>
-    </header>
+</nav>
+<header class="hero-section text-center text-md-start">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="hero-title">¡Bienvenido a Rueda Libre!</h1>
+                <p class="hero-description">
+                Alquiler de bicicletas y los mejores recorridos guiados para descubrir Medellín sobre dos ruedas.
+                </p>
+                <a href="#nuestra-flota" class="hero-cta">Nuestra Flota &rarr;</a>
+            </div>
+        </div>
+    </div>
+</header>
 
     <main>
-        <div class="container">
-            <!-- Content here -->
-            <section class="quienes-somos">
-                <div id="quienes-somos">
-                    <h2>¿Quiénes somos?</h2>
-                    <p>
-                        Somos un emprendimiento paisa apasionado por la movilidad sostenible.
-                        <br>
-                        Conectamos a locales y viajeros con la historia, el arte y la cultura de Medellín
-                        <br>
-                        a través de experiencias en dos ruedas seguras y divertidas.
-                    </p>
-                    <img src="./resources/images/bicicleta-roca-27.5-para-stunt.webp"
-                        alt="Alquiler de bicicletas en Medellín" width="600" id="quienes-somos-image">
+        <section class="quienes-somos py-5">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <!-- Left side: Text -->
+                    <div class="col-lg-7">
+                        <h2 class="title-quienes-somos">¿Quiénes somos?</h2>
+                        <p class="content-quienes-somos">
+                            Somos un emprendimiento paisa apasionado por la movilidad sostenible.
+                            Conectamos a locales y viajeros con la historia, el arte y la cultura de Medellín
+                            a través de experiencias en dos ruedas seguras y divertidas.
+                        </p>
+                    </div>
+
+                    <!-- Right side: Image -->
+                    <div class="col-lg-5 text-center">
+                        <img src="./resources/images/bicicleta-roca-27.5-para-stunt.webp"
+                            alt="Alquiler de bicicletas en Medellín" 
+                            class="img-fluid rounded-4 quienes-somos-img">
+                    </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
 
 
-        <div class="container text-center">
-            <div class="row">
-                <div class="col">
-                    <section class="services">
-                        <h2>Nuestros servicios</h2>
-
+        <section>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                    <h2>Nuestros servicios</h2>
                         <div class="services-list">
                             <article class="service-item">
                                 <h3>Alquiler de Bicicletas</h3>
@@ -96,34 +101,48 @@
                                 <h3>Asesoramiento</h3>
                                 <p>Asesoramiento sobre seguridad y mantenimiento de bicicletas.</p>
                             </article>
-                        </div>
-                    </section>
+                    </div>
+                    <div class="col">
+                    Column
+                    </div>
                 </div>
-                <div class="col">
-                    <section class="benefits">
-                        <div class="benefits-content">
-                            <div class="benefits-text">
-                                <h2 id="benefit-title">Beneficios de alquilar con nosotros</h2>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+        <section class="benefits">
+            <div class="row"></div>
+                <div class="col"></div>
+                    <div class="benefits-content">
+                        <div class="benefits-text">
+                            <h2 id="benefit-title">Beneficios de alquilar con nosotros</h2>
                                 <ol id="benefit-list">
                                     <li>Variedad de bicicletas: urbanas, de montaña y eléctricas.</li>
                                     <li>Precios competitivos y flexibles.</li>
                                     <li>Recorridos guiados por expertos locales.</li>
                                 </ol>
-                            </div>
                         </div>
-                        <br><br>
-                        <div class="benefits-image-div">
-                            <img src="./resources/images/images (1).jpeg" alt="Beneficios de alquilar con nosotros"
-                                id="benefits-image">
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
+                    </div>
+                <br><br>
+                    <div class="benefits-image-div">
+                        <img src="./resources/images/images (1).jpeg" alt="Beneficios de alquilar con nosotros"
+                            id="benefits-image">
+                    </div>
+        </section>
 
 
         <div>
-            <section class="nuestra-flota">
+            <section class="nuestra-flota" id="nuestra-flota">
                 <h2>Nuestra flota</h2>
                 <br><br>
                 <div class="contenedor-targetas">
@@ -254,7 +273,7 @@
                 </a></p>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.343423984637!2d-75.5882881!3d6.2193664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429e1dab04e05%3A0x5a77c25c8a5faf3a!2sDe%20Moda%20Outlet!5e0!3m2!1sen!2sco!4v1792768616516!5m2!1sen!2sco"
-                width="700" height="450" style="border: 0;" allowfullscreen="" loading="lazy"
+                width="600" height="400" style="border: 0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="strict-origin-when-cross-origin">
             </iframe>
         </div>

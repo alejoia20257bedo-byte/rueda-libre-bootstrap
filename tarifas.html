@@ -10,37 +10,38 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <img src="resources/images/icon.png" alt="icon" class="icon">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./tarifas.html">Tarifas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./reservas.html">Reservas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./reservas.html">Nuevo</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
-                </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="resources/images/icon.png" alt="icon" class="icon">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Added w-100 to fill the available width -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./tarifas.html">Tarifas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./reservas.html">Reservas</a>
+                    </li>
+                    <!-- ms-auto pushes this item to the far right on large screens -->
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-black " href="./reservas.html">Nuevo</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+</nav>
+    <header>
+        
     </header>
 
     <div class="container welcome-message">
@@ -167,7 +168,7 @@
                 </a></p>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.343423984637!2d-75.5882881!3d6.2193664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429e1dab04e05%3A0x5a77c25c8a5faf3a!2sDe%20Moda%20Outlet!5e0!3m2!1sen!2sco!4v1792768616516!5m2!1sen!2sco"
-                width="700" height="450" style="border: 0;" allowfullscreen="" loading="lazy"
+                width="600" height="400" style="border: 0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="strict-origin-when-cross-origin">
             </iframe>
         </div>
