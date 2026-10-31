@@ -78,6 +78,32 @@
   border-bottom-color: var(--color-primary);
   transform: translateX(4px); /* Subtle nudge */
 }
+
+/* WhatsApp Floating Button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000; 
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+  transform: scale(1.05);
+}
 /* ----------------------------------------------------------------------------- */
 /* Quienes somos */
 .quienes-somos {
@@ -106,6 +132,30 @@
     object-fit: cover;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
+/* ---------------------------------------------------------------------------------------- */
+/* Styling the "How to Rent" section */
+.how-to-rent {
+  padding: var(--space-xl);
+  background-color: rgba(12, 33, 195, 0.1);
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.how-to-rent-list {
+  text-align: left;
+  max-width: 600px;
+  padding-left: 20px;
+}
+
+.how-to-rent-item {
+  font-size: 0.95rem;
+  margin-bottom: var(--space-sm);
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------------------------- */
 
 /* ------------------------------------------------------------------------------- */
 footer {
