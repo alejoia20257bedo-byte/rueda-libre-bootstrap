@@ -12,14 +12,19 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <img src="resources/images/icon.png" alt="icon" class="icon">
+            <!-- Brand logo wrapper with a controlled height -->
+            <a class="navbar-brand" href="./index.html">
+                <img src="resources/images/icon.png" alt="Rueda Libre" height="48"
+                    class="d-inline-block align-text-top">
+            </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Added w-100 to fill the available width -->
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
@@ -30,11 +35,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./reservas.html">Reservas</a>
                     </li>
-                    <!-- ms-auto pushes this item to the far right on large screens -->
                 </ul>
-                <ul class="navbar-nav mb-2 mb-lg-0 ">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-black " href="./reservas.html">Nuevo</a>
+                        <a class="nav-link btn btn-primary text-black" href="./reservas.html">Nuevo</a>
                     </li>
                 </ul>
             </div>

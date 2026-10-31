@@ -12,14 +12,19 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <img src="resources/images/icon.png" alt="icon" class="icon">
+            <!-- Brand logo wrapper with a controlled height -->
+            <a class="navbar-brand" href="./index.html">
+                <img src="resources/images/icon.png" alt="Rueda Libre" height="48"
+                    class="d-inline-block align-text-top">
+            </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Added w-100 to fill the available width -->
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
@@ -30,11 +35,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./reservas.html">Reservas</a>
                     </li>
-                    <!-- ms-auto pushes this item to the far right on large screens -->
                 </ul>
-                <ul class="navbar-nav mb-2 mb-lg-0 ">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-black " href="./reservas.html">Nuevo</a>
+                        <a class="nav-link btn btn-primary text-black" href="./reservas.html">Nuevo</a>
                     </li>
                 </ul>
             </div>
@@ -47,7 +51,8 @@
     <section>
         <div class="container ">
             <div class="row ">
-                <div class="col text-center py-5 mb-3 mt-3" style="font-family: var(--font-heading);">
+                <div class="col-12 .col-sm-6 .col-lg-4 .col-xl-3 text-center py-5 mb-3 mt-3"
+                    style="font-family: var(--font-heading);">
                     <h1>Tarifas</h1>
                     <p>Consulta nuestras tarifas de alquiler de bicicletas y recorridos guiados en Medellín.</p>
                 </div>
@@ -168,7 +173,8 @@
                 <div class="row">
                     <div class="col text-center p-4">
                         <p>
-                            Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a. m.
+                            Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las
+                            7:00 a. m.
                             <br>
                             Qué llevar: ropa cómoda, agua, protector solar y documento de identidad.
                         </p>
