@@ -1,311 +1,257 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reservar</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./resources/css/style.css" />
-  </head>
 
-  <body>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <img src="resources/images/icon.png" alt="icon" class="icon">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./resources/css/style.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img src="resources/images/icon.png" alt="icon" class="icon">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Added w-100 to fill the available width -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./tarifas.html">Tarifas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./reservas.html">Reservas</a>
+          </li>
+          <!-- ms-auto pushes this item to the far right on large screens -->
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary text-black " href="./reservas.html">Nuevo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header>
+  </header>
+
+  <section>
+    <div class="container p-5">
+      <div class="row">
+        <div class="col text-center">
+          <p>
+            ¡Bienvenido a Rueda Libre! Alquiler de bicicletas y los mejores
+            <br>
+            recorridos guiados para descubrir Medellín sobre dos ruedas.
+            <br>
+            <button type="button" class="btn btn-link">
+              <a href="./index.html">¿Quiénes somos?</a>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Added w-100 to fill the available width -->
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./tarifas.html">Tarifas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./reservas.html">Reservas</a>
-                    </li>
-                    <!-- ms-auto pushes this item to the far right on large screens -->
-                </ul>
-                <ul class="navbar-nav mb-2 mb-lg-0 ">
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-black " href="./reservas.html">Nuevo</a>
-                    </li>
-                </ul>
-            </div>
+          </p>
         </div>
-</nav>
-    <header>    
-    </header>
+      </div>
+    </div>
+  </section>
 
-      <div class="container welcome-message">
+  <main>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h2>Formulario de reservas:</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row p-5 m-3">
+          <div class="col">
+            <div class="responsive">
+              <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-4">
+                  <label for="validationCustom01" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="validationCustom01" required />
+                  <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationCustom02" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="validationCustom02" required />
+                  <div class="valid-feedback">Looks good!</div>
+                </div>
+                <label for="range4" class="form-label">Edad</label>
+                <input type="range" class="form-range" min="0" max="100" value="50" id="range4" />
+                <output for="range4" id="rangeValue" aria-hidden="true"></output>
+
+                <script>
+                  // This is an example script, please modify as needed
+                  const rangeInput = document.getElementById("range4");
+                  const rangeOutput = document.getElementById("rangeValue");
+
+                  // Set initial value
+                  rangeOutput.textContent = rangeInput.value;
+
+                  rangeInput.addEventListener("input", function () {
+                    rangeOutput.textContent = this.value;
+                  });
+                </script>
+                <div class="col-md-4">
+                  <label for="validationCustomUsername" class="form-label">Email</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <input type="email" class="form-control" id="validationCustomUsername"
+                      aria-describedby="inputGroupPrepend" required />
+                    <div class="invalid-feedback">
+                      Por favor, ingresa un email válido.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationCustom03" class="form-label">Ciudad</label>
+                  <input type="text" class="form-control" id="validationCustom03" required />
+                  <div class="invalid-feedback">Please provide a valid ciudad.</div>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationCustom04" class="form-label">Número de teléfono</label>
+                  <input type="tel" class="form-control" id="validationCustom04" required pattern="[0-9]{10}" />
+                  <div class="invalid-feedback">
+                    Por favor, ingresa un número de teléfono válido.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationCustom03" class="form-label">Fecha de alquiler</label>
+                  <input type="date" class="form-control" id="validationCustom03" required min="2026-11-01"
+                    max="2026-12-31" />
+                  <div class="invalid-feedback">
+                    Please provide a valid fecha de alquiler.
+                  </div>
+                </div>
+
+                <legend>Tu alquiler</legend>
+                <div class="mb-3">
+                  <label for="validationCustom04" class="form-label">Tipo de bicicleta:
+                  </label>
+                  <select class="form-select" required aria-label="select example">
+                    <option value="">Abre el panel de optiones</option>
+                    <option value="1">Urbana</option>
+                    <option value="2">Montaña</option>
+                    <option value="3">Elétrica</option>
+                  </select>
+                  <div class="invalid-feedback">Example invalid select feedback</div>
+                </div>
+                <div class="mb-3">
+                  <label for="validationCustom04" class="form-label">Plan: </label>
+                  <select class="form-select" required aria-label="select example">
+                    <option value="">Abre el panel de optiones</option>
+                    <option value="1">1 hora</option>
+                    <option value="2">Medio día</option>
+                    <option value="3">Día completo</option>
+                  </select>
+                  <div class="invalid-feedback">Example invalid select feedback</div>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationCustom04" class="form-label">Cantidad de Bicicletas</label>
+                  <input type="number" class="form-control" id="validationCustom04" required />
+                  <div class="invalid-feedback">
+                    Por favor, ingresa un número de cantidad de bicicletas
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="validationCustom04" class="form-label">Recorrido guiado:
+                  </label>
+                  <select class="form-select" required aria-label="select example">
+                    <option value="">Ninguno</option>
+                    <option value="1">Río y parques</option>
+                    <option value="2">Amores de Barrio</option>
+                    <option value="3">Reto las palmas</option>
+                  </select>
+                  <div class="invalid-feedback">Example invalid select feedback</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="validationTextarea" class="form-label">Textarea</label>
+                  <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea"
+                    required></textarea>
+                  <div class="invalid-feedback">
+                    Please enter a message in the textarea.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+                    <label class="form-check-label" for="invalidCheck">
+                      Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                      You must agree before submitting.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Submit form</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <a href="https://wa.me/573001234567" class="whatsapp-btn" target="_blank" rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp">
+    💬
+  </a>
+
+  <footer>
+    <div class="footer-content">
+      <h2 id="encuentranos">Encuéntranos</h2>
+      <div>
+        <p>© 2026 Rueda Libre. Todos los derechos reservados.</p>
         <p>
-          ¡Bienvenido a Rueda Libre! Alquiler de bicicletas y los mejores
-          recorridos guiados para descubrir Medellín sobre dos ruedas.
-          <a href="./index.html">¿Quiénes somos?</a>
+          Ubicación: Circular 4 # 71-45, Laureles, Medellín (cerca de la
+          estación Estadio).
         </p>
+        <p>
+          Horarios: Lunes a sábado de 7:00 a.m. a 7:00 p.m. | Domingos y
+          festivos de 6:30 a.m. a 5:00 p.m.
+        </p>
+        <p>
+          Contacto: +57 (300) 123-4567 |
+          <a href="mailto:contacto@ruedalibre.com.co">contacto@ruedalibre.com.co</a>
+          | @RuedaLibreMedellin
+        </p>
+      </div>
     </div>
 
-    <main>
-      <section class="formulario-reservas">
-        <h2>Formulario de reservas:</h2>
-      </section>
+    <div>
+      <p>
+        <a href="https://maps.app.goo.gl/RLCoxQNqv8WT2ADE7" target="_blank" rel="noopener noreferrer">Ver ubicación en
+          el mapa
+        </a>
+      </p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.343423984637!2d-75.5882881!3d6.2193664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429e1dab04e05%3A0x5a77c25c8a5faf3a!2sDe%20Moda%20Outlet!5e0!3m2!1sen!2sco!4v1792768616516!5m2!1sen!2sco"
+        width="600" height="400" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
 
-      <div>
-        <!-- All fields and the submit button are now inside ONE form -->
-        <form class="row g-3 needs-validation" novalidate>
-          <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">Nombre</label>
-            <input
-              type="text"
-              class="form-control"
-              id="validationCustom01"
-              required
-            />
-            <div class="valid-feedback">Looks good!</div>
-          </div>
-          <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Apellido</label>
-            <input
-              type="text"
-              class="form-control"
-              id="validationCustom02"
-              required
-            />
-            <div class="valid-feedback">Looks good!</div>
-          </div>
-          <label for="range4" class="form-label">Edad</label>
-          <input
-            type="range"
-            class="form-range"
-            min="0"
-            max="100"
-            value="50"
-            id="range4"
-          />
-          <output for="range4" id="rangeValue" aria-hidden="true"></output>
-
-          <script>
-            // This is an example script, please modify as needed
-            const rangeInput = document.getElementById("range4");
-            const rangeOutput = document.getElementById("rangeValue");
-
-            // Set initial value
-            rangeOutput.textContent = rangeInput.value;
-
-            rangeInput.addEventListener("input", function () {
-              rangeOutput.textContent = this.value;
-            });
-          </script>
-          <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label"
-              >Email</label
-            >
-            <div class="input-group has-validation">
-              <span class="input-group-text" id="inputGroupPrepend">@</span>
-              <input
-                type="email"
-                class="form-control"
-                id="validationCustomUsername"
-                aria-describedby="inputGroupPrepend"
-                required
-              />
-              <div class="invalid-feedback">
-                Por favor, ingresa un email válido.
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label for="validationCustom03" class="form-label">Ciudad</label>
-            <input
-              type="text"
-              class="form-control"
-              id="validationCustom03"
-              required
-            />
-            <div class="invalid-feedback">Please provide a valid ciudad.</div>
-          </div>
-          <div class="col-md-3">
-            <label for="validationCustom04" class="form-label"
-              >Número de teléfono</label
-            >
-            <input
-              type="tel"
-              class="form-control"
-              id="validationCustom04"
-              required
-              pattern="[0-9]{10}"
-            />
-            <div class="invalid-feedback">
-              Por favor, ingresa un número de teléfono válido.
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label for="validationCustom03" class="form-label">Fecha de alquiler</label>
-            <input
-              type="date"
-              class="form-control"
-              id="validationCustom03"
-              required
-              min="2026-11-01"
-              max="2026-12-31"
-            />
-            <div class="invalid-feedback">
-              Please provide a valid fecha de alquiler.
-            </div>
-          </div>
-
-          <legend>Tu alquiler</legend>
-          <div class="mb-3">
-            <label for="validationCustom04" class="form-label"
-              >Tipo de bicicleta:
-            </label>
-            <select class="form-select" required aria-label="select example">
-              <option value="">Abre el panel de optiones</option>
-              <option value="1">Urbana</option>
-              <option value="2">Montaña</option>
-              <option value="3">Elétrica</option>
-            </select>
-            <div class="invalid-feedback">Example invalid select feedback</div>
-          </div>
-          <div class="mb-3">
-            <label for="validationCustom04" class="form-label">Plan: </label>
-            <select class="form-select" required aria-label="select example">
-              <option value="">Abre el panel de optiones</option>
-              <option value="1">1 hora</option>
-              <option value="2">Medio día</option>
-              <option value="3">Día completo</option>
-            </select>
-            <div class="invalid-feedback">Example invalid select feedback</div>
-          </div>
-          <div class="col-md-3">
-            <label for="validationCustom04" class="form-label"
-              >Cantidad de Bicicletas</label
-            >
-            <input
-              type="number"
-              class="form-control"
-              id="validationCustom04"
-              required
-            />
-            <div class="invalid-feedback">
-              Por favor, ingresa un número de cantidad de bicicletas
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="validationCustom04" class="form-label"
-              >Recorrido guiado:
-            </label>
-            <select class="form-select" required aria-label="select example">
-              <option value="">Ninguno</option>
-              <option value="1">Río y parques</option>
-              <option value="2">Amores de Barrio</option>
-              <option value="3">Reto las palmas</option>
-            </select>
-            <div class="invalid-feedback">Example invalid select feedback</div>
-          </div>
-
-          <div class="mb-3">
-            <label for="validationTextarea" class="form-label">Textarea</label>
-            <textarea
-              class="form-control"
-              id="validationTextarea"
-              placeholder="Required example textarea"
-              required
-            ></textarea>
-            <div class="invalid-feedback">
-              Please enter a message in the textarea.
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="invalidCheck"
-                required
-              />
-              <label class="form-check-label" for="invalidCheck">
-                Agree to terms and conditions
-              </label>
-              <div class="invalid-feedback">
-                You must agree before submitting.
-              </div>
-            </div>
-          </div>
-          <div class="col-12">
-            <button class="btn btn-primary" type="submit">Submit form</button>
-          </div>
-        </form>
-      </div>
-    </main>
-
-
-    <a
-      href="https://wa.me/573001234567"
-      class="whatsapp-btn"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp"
-    >
-      💬
-    </a>
-
-    <footer>
-      <div class="footer-content">
-        <h2 id="encuentranos">Encuéntranos</h2>
-        <div>
-          <p>© 2026 Rueda Libre. Todos los derechos reservados.</p>
-          <p>
-            Ubicación: Circular 4 # 71-45, Laureles, Medellín (cerca de la
-            estación Estadio).
-          </p>
-          <p>
-            Horarios: Lunes a sábado de 7:00 a.m. a 7:00 p.m. | Domingos y
-            festivos de 6:30 a.m. a 5:00 p.m.
-          </p>
-          <p>
-            Contacto: +57 (300) 123-4567 |
-            <a href="mailto:contacto@ruedalibre.com.co"
-              >contacto@ruedalibre.com.co</a
-            >
-            | @RuedaLibreMedellin
-          </p>
-        </div>
-      </div>
-
-      <div>
-        <p>
-          <a
-            href="https://maps.app.goo.gl/RLCoxQNqv8WT2ADE7"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Ver ubicación en el mapa
-          </a>
-        </p>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.343423984637!2d-75.5882881!3d6.2193664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429e1dab04e05%3A0x5a77c25c8a5faf3a!2sDe%20Moda%20Outlet!5e0!3m2!1sen!2sco!4v1792768616516!5m2!1sen!2sco"
-          width="600" height="400"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"
-        >
-        </iframe>
-      </div>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
 </html>
