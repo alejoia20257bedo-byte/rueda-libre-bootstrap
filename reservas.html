@@ -10,39 +10,39 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <!-- Brand logo wrapper with a controlled height -->
-      <a class="navbar-brand" href="./index.html">
-        <img src="resources/images/icon.png" alt="Rueda Libre" height="48" class="d-inline-block align-text-top">
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./tarifas.html">Tarifas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./reservas.html">Reservas</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link btn btn-primary text-black" href="./reservas.html">Nuevo</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
   <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <!-- Brand logo wrapper with a controlled height -->
+        <a class="navbar-brand" href="./index.html">
+          <img src="resources/images/icon.png" alt="Rueda Libre" height="48" class="d-inline-block align-text-top">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./tarifas.html">Tarifas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./reservas.html">Reservas</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link btn btn-primary text-black" href="./reservas.html">Nuevo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <section>
@@ -57,7 +57,6 @@
             <button type="button" class="btn btn-link">
               <a href="./index.html">¿Quiénes somos?</a>
             </button>
-          </p>
         </div>
       </div>
     </div>
@@ -68,12 +67,13 @@
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-12 .col-sm-6 .col-lg-4 .col-xl-3">
+          <div class="col-12 .col-sm-6 .col-lg-4 .col-xl-3 p-2">
             <h2>Formulario de reservas:</h2>
           </div>
         </div>
       </div>
     </section>
+
 
     <section>
       <div class="container">
@@ -81,128 +81,175 @@
           <div class="col">
             <div class="responsive">
               <form class="row g-3 needs-validation" novalidate>
+                <!-- Nombre -->
                 <div class="col-md-4">
-                  <label for="validationCustom01" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="validationCustom01" required />
-                  <div class="valid-feedback">Looks good!</div>
+                  <label for="validationNombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="validationNombre" required />
+                  <div class="valid-feedback">¡Se ve bien!</div>
+                  <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
                 </div>
+
+                <!-- Apellido -->
                 <div class="col-md-4">
-                  <label for="validationCustom02" class="form-label">Apellido</label>
-                  <input type="text" class="form-control" id="validationCustom02" required />
-                  <div class="valid-feedback">Looks good!</div>
+                  <label for="validationApellido" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="validationApellido" required />
+                  <div class="valid-feedback">¡Se ve bien!</div>
+                  <div class="invalid-feedback">Por favor ingresa tu apellido.</div>
                 </div>
-                <label for="range4" class="form-label">Edad</label>
-                <input type="range" class="form-range" min="0" max="100" value="50" id="range4" />
-                <output for="range4" id="rangeValue" aria-hidden="true"></output>
 
-                <script>
-                  // This is an example script, please modify as needed
-                  const rangeInput = document.getElementById("range4");
-                  const rangeOutput = document.getElementById("rangeValue");
-
-                  // Set initial value
-                  rangeOutput.textContent = rangeInput.value;
-
-                  rangeInput.addEventListener("input", function () {
-                    rangeOutput.textContent = this.value;
-                  });
-                </script>
+                <!-- Email -->
                 <div class="col-md-4">
-                  <label for="validationCustomUsername" class="form-label">Email</label>
+                  <label for="validationEmail" class="form-label">Email</label>
                   <div class="input-group has-validation">
-                    <span class="input-group-text" id="inputGroupPrepend">@</span>
-                    <input type="email" class="form-control" id="validationCustomUsername"
-                      aria-describedby="inputGroupPrepend" required />
-                    <div class="invalid-feedback">
-                      Por favor, ingresa un email válido.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <label for="validationCustom03" class="form-label">Ciudad</label>
-                  <input type="text" class="form-control" id="validationCustom03" required />
-                  <div class="invalid-feedback">Please provide a valid ciudad.</div>
-                </div>
-                <div class="col-md-3">
-                  <label for="validationCustom04" class="form-label">Número de teléfono</label>
-                  <input type="tel" class="form-control" id="validationCustom04" required pattern="[0-9]{10}" />
-                  <div class="invalid-feedback">
-                    Por favor, ingresa un número de teléfono válido.
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <label for="validationCustom03" class="form-label">Fecha de alquiler</label>
-                  <input type="date" class="form-control" id="validationCustom03" required min="2026-11-01"
-                    max="2026-12-31" />
-                  <div class="invalid-feedback">
-                    Please provide a valid fecha de alquiler.
+                    <span class="input-group-text">@</span>
+                    <input type="email" class="form-control" id="validationEmail" required />
+                    <div class="invalid-feedback">Por favor, ingresa un email válido.</div>
                   </div>
                 </div>
 
-                <legend>Tu alquiler</legend>
-                <div class="mb-3">
-                  <label for="validationCustom04" class="form-label">Tipo de bicicleta:
-                  </label>
-                  <select class="form-select" required aria-label="select example">
-                    <option value="">Abre el panel de optiones</option>
+                <!-- Edad Slider -->
+                <div class="col-12">
+                  <label for="rangeEdad" class="form-label">Edad: <span id="rangeValue">50</span></label>
+                  <input type="range" class="form-range" min="10" max="100" value="50" id="rangeEdad" />
+                </div>
+
+                <!-- Ciudad -->
+                <div class="col-md-4">
+                  <label for="validationCiudad" class="form-label">Ciudad</label>
+                  <input type="text" class="form-control" id="validationCiudad" required />
+                  <div class="invalid-feedback">Por favor ingresa una ciudad.</div>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="col-md-4">
+                  <label for="validationTelefono" class="form-label">Número de teléfono</label>
+                  <input type="tel" class="form-control" id="validationTelefono" required pattern="[0-9]{10}"
+                    placeholder="Ej. 3001234567" />
+                  <div class="invalid-feedback">Ingresa un número válido de 10 dígitos.</div>
+                </div>
+
+                <!-- Fecha -->
+                <div class="col-md-4">
+                  <label for="validationFecha" class="form-label">Fecha de alquiler</label>
+                  <input type="date" class="form-control" id="validationFecha" required min="2026-11-01"
+                    max="2026-12-31" />
+                  <div class="invalid-feedback">Selecciona una fecha válida.</div>
+                </div>
+
+                <legend class="mt-4">Tu alquiler</legend>
+
+                <!-- Tipo de Bici -->
+                <div class="col-md-4">
+                  <label for="validationBici" class="form-label">Tipo de bicicleta:</label>
+                  <select class="form-select" id="validationBici" required>
+                    <option value="">Abre el panel de opciones</option>
                     <option value="1">Urbana</option>
                     <option value="2">Montaña</option>
-                    <option value="3">Elétrica</option>
+                    <option value="3">Eléctrica</option>
                   </select>
-                  <div class="invalid-feedback">Example invalid select feedback</div>
+                  <div class="invalid-feedback">Por favor selecciona un tipo de bicicleta.</div>
                 </div>
-                <div class="mb-3">
-                  <label for="validationCustom04" class="form-label">Plan: </label>
-                  <select class="form-select" required aria-label="select example">
-                    <option value="">Abre el panel de optiones</option>
+
+                <!-- Plan -->
+                <div class="col-md-4">
+                  <label for="validationPlan" class="form-label">Plan:</label>
+                  <select class="form-select" id="validationPlan" required>
+                    <option value="">Abre el panel de opciones</option>
                     <option value="1">1 hora</option>
                     <option value="2">Medio día</option>
                     <option value="3">Día completo</option>
                   </select>
-                  <div class="invalid-feedback">Example invalid select feedback</div>
+                  <div class="invalid-feedback">Por favor escoge un plan.</div>
                 </div>
-                <div class="col-md-3">
-                  <label for="validationCustom04" class="form-label">Cantidad de Bicicletas</label>
-                  <input type="number" class="form-control" id="validationCustom04" required />
-                  <div class="invalid-feedback">
-                    Por favor, ingresa un número de cantidad de bicicletas
-                  </div>
+
+                <!-- Cantidad -->
+                <div class="col-md-4">
+                  <label for="validationCantidad" class="form-label">Cantidad de Bicicletas</label>
+                  <input type="number" class="form-control" id="validationCantidad" min="1" max="10" required />
+                  <div class="invalid-feedback">Ingresa una cantidad válida (mínimo 1).</div>
                 </div>
-                <div class="mb-3">
-                  <label for="validationCustom04" class="form-label">Recorrido guiado:
-                  </label>
-                  <select class="form-select" required aria-label="select example">
-                    <option value="">Ninguno</option>
+
+                <!-- Recorrido -->
+                <div class="col-md-6">
+                  <label for="validationRecorrido" class="form-label">Recorrido guiado:</label>
+                  <select class="form-select" id="validationRecorrido">
+                    <option value="0">Ninguno</option>
                     <option value="1">Río y parques</option>
                     <option value="2">Amores de Barrio</option>
                     <option value="3">Reto las palmas</option>
                   </select>
-                  <div class="invalid-feedback">Example invalid select feedback</div>
                 </div>
 
-                <div class="mb-3">
-                  <label for="validationTextarea" class="form-label">Textarea</label>
-                  <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea"
-                    required></textarea>
-                  <div class="invalid-feedback">
-                    Please enter a message in the textarea.
-                  </div>
+                <!-- Comentarios / Mensaje -->
+                <div class="col-md-6">
+                  <label for="validationComentarios" class="form-label">Comentarios o notas</label>
+                  <textarea class="form-control" id="validationComentarios" rows="1"
+                    placeholder="Detalles adicionales..."></textarea>
                 </div>
+
+                <!-- Términos -->
                 <div class="col-12">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
-                    <label class="form-check-label" for="invalidCheck">
-                      Agree to terms and conditions
+                    <input class="form-check-input" type="checkbox" id="validationTerminos" required />
+                    <label class="form-check-label" for="validationTerminos">
+                      Acepto los términos y condiciones
                     </label>
-                    <div class="invalid-feedback">
-                      You must agree before submitting.
+                    <div class="invalid-feedback">Debes aceptar los términos antes de continuar.</div>
+
+                    <button type="button" class="btn btn-link theme-primary" id="openAlertBtn">
+                      Políticas de alquiler
+                    </button>
+
+                    <div
+                      class="alert alert-warning alert-dismissible fade show position-fixed top-50 start-50 translate-middle shadow-lg p-4 theme-warning"
+                      role="alert" id="politicasAlert" style="max-width: 420px; z-index: 1060; width: 90%;">
+
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h5 class="alert-heading fs-6 fw-bold mb-0">Políticas de alquiler</h5>
+                        <button type="button" class="btn-close" id="closeAlertBtn" aria-label="Close"></button>
+                      </div>
+
+                      <ol class="small ps-3 mb-0">
+                        <li>Presenta tu documento de identidad original al recoger la bicicleta.</li>
+                        <li>Revisa la bicicleta con el asesor antes de salir.</li>
+                        <li>Cada 15 minutos de retraso en la devolución tienen un recargo de $5.000.</li>
+                        <li>Los daños por mal uso se cobran según el costo de la reparación.</li>
+                        <li>Los menores de edad deben estar acompañados por un adulto responsable.</li>
+                      </ol>
                     </div>
+
                   </div>
                 </div>
+
+                <!-- Submit -->
                 <div class="col-12">
-                  <button class="btn btn-primary" type="submit">Submit form</button>
+                  <button class="btn btn-primary" type="submit">Enviar reserva</button>
                 </div>
               </form>
+
+              <script>
+                // Range value sync
+                const rangeInput = document.getElementById("rangeEdad");
+                const rangeOutput = document.getElementById("rangeValue");
+                rangeInput.addEventListener("input", function () {
+                  rangeOutput.textContent = this.value;
+                });
+
+                // Bootstrap custom form validation trigger
+                (() => {
+                  'use strict'
+                  const forms = document.querySelectorAll('.needs-validation')
+                  Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+                      if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                      }
+                      form.classList.add('was-validated');
+                    }, false);
+                  });
+                })();
+              </script>
             </div>
           </div>
         </div>
@@ -252,9 +299,41 @@
       </iframe>
     </div>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <script src="./resources/js/functionality.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const alertBox = document.getElementById('politicasAlert');
+      const openBtn = document.getElementById('openAlertBtn');
+      const closeBtn = document.getElementById('closeAlertBtn');
+
+      // 1. Shows immediately on page load by having classes 'fade show d-block'
+      alertBox.classList.remove('d-none');
+      alertBox.classList.add('d-block');
+
+      // 2. Hide window on close button click
+      closeBtn.addEventListener('click', () => {
+        alertBox.classList.remove('show');
+        setTimeout(() => {
+          alertBox.classList.remove('d-block');
+          alertBox.classList.add('d-none');
+        }, 150); // Matches Bootstrap fade transition
+      });
+
+      // 3. Reopen window on trigger button click
+      openBtn.addEventListener('click', () => {
+        alertBox.classList.remove('d-none');
+        alertBox.classList.add('d-block');
+        setTimeout(() => {
+          alertBox.classList.add('show');
+        }, 10);
+      });
+    });
+  </script>
 </body>
 
 </html>
