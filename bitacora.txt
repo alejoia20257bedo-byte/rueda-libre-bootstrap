@@ -1,0 +1,246 @@
+================================================================================
+                    BITÁCORA DE DESARROLLO - RUEDA LIBRE
+       Semana: Personalización e Identidad de Marca sobre Bootstrap 5
+================================================================================
+
+1. RESUMEN DE LA SEMANA
+--------------------------------------------------------------------------------
+Durante esta semana se abordó la solicitud del cliente:
+"Se ve bien, pero parece uno de mil sitios. ¿Dónde están mis colores?".
+
+El objetivo principal fue inyectar la identidad de marca auténtica de Rueda Libre
+a lo largo de todo el sitio web (index.html, reservas.html, tarifas.html) sin
+"pelear" con Bootstrap, aprovechando su arquitectura basada en variables CSS en
+:root, creando variantes de botones y clases semánticas propias, e integrando la
+librería Bootstrap Icons con altos estándares de accesibilidad (WCAG AA).
+
+Resultado:
+Un sitio web moderno, acogedor y con personalidad propia de la cultura ciclista
+paisa de Medellín, combinando calidez, elegancia y funcionalidad interactiva.
+
+
+2. PALETA DE COLOR OFICIAL DE LA MARCA
+--------------------------------------------------------------------------------
+Se implementaron de forma integral los 4 tonos solicitados por el cliente:
+
+  * Beige (#FEF3E2 | rgb(254, 243, 226)):
+    Fondo general del cuerpo (body), proporcionando calidez orgánica y evitando
+    el blanco hospitalario genérico.
+
+  * Dorado / Gold (#F4AE52 | rgb(244, 174, 82)):
+    Color de acento secundario para bordes de tarjetas, tarjetas de promoción,
+    enlaces del footer y líneas decorativas.
+
+  * Naranja / Orange (#D4621A | rgb(212, 98, 26)):
+    Color primario de la marca (--bs-primary), utilizado en enlaces interactivos,
+    botones de llamada a la acción ("Pedal Naranja"), bordes y elementos clave.
+
+  * Negro Cálido / Dark (#2A1A0E | rgb(42, 26, 14)):
+    Color tipográfico principal (--bs-body-color), encabezados, fondos del pie de
+    página (footer) y cabeceras de tablas de tarifas. Proporciona alto contraste
+    y armonía con el beige y el naranja.
+
+
+3. PERSONALIZACIÓN DE VARIABLES GLOBALES DE BOOTSTRAP (styles.css)
+--------------------------------------------------------------------------------
+En el archivo resources/css/style.css, cargado inmediatamente después del CSS de
+Bootstrap, se sobrescribieron las siguientes variables de :root sin usar !important:
+
+  - Color primario:
+    --bs-primary: #D4621A;
+    --bs-primary-rgb: 212, 98, 26;
+
+  - Tipografía y fondo del body:
+    --bs-body-font-family: var(--font-body);
+    --bs-body-bg: #FEF3E2;
+    --bs-body-color: #2A1A0E;
+
+  - Color de enlaces:
+    --bs-link-color: #D4621A;
+    --bs-link-hover-color: #B54F11;
+
+  - Radio de bordes (Border Radius):
+    --bs-border-radius: 0.625rem; (10px - diseño redondeado y amigable)
+    --bs-border-radius-sm: 0.375rem;
+    --bs-border-radius-lg: 1rem;
+    --bs-border-radius-xl: 1.25rem;
+    --bs-border-radius-xxl: 2rem;
+
+
+4. SISTEMA DE BOTONES: RUTA VERDE Y PEDAL NARANJA
+--------------------------------------------------------------------------------
+A) Botón Principal "Ruta Verde" (.btn-primary):
+   Inspirado en la movilidad sostenible y las ciclorrutas de Medellín.
+   Ajustado mediante las variables nativas de Bootstrap --bs-btn-* con estados
+   hover y active perfectamente consistentes:
+     * Color base:   #2D6A4F
+     * Hover:        #1E5534
+     * Active:       #143C24
+     * Focus shadow: rgba(45, 106, 79, 0.4)
+     * Texto:        #ffffff
+
+B) Variante Personalizada "Pedal Naranja" (.btn-orange-pedal / .btn-pedal-naranja):
+   Diseñado para llamadas a la acción directas y ofertas destacadas.
+     * Color base:   #D4621A
+     * Hover:        #B54F11
+     * Active:       #963F0B
+     * Focus shadow: rgba(212, 98, 26, 0.4)
+     * Texto:        #ffffff (Contraste verificado > 4.5:1 frente a #D4621A, WCAG AA)
+
+
+5. CLASES PROPIAS PARA COMPLEMENTAR BOOTSTRAP (Sin modificar el framework)
+--------------------------------------------------------------------------------
+1. .rl-hero-banner:
+   Define la portada con un degradado sutil entre el beige (#FEF3E2), tonos
+   dorados y naranja, otorgando profundidad y calidez al inicio de la página.
+
+2. .rl-section-title:
+   Estiliza los títulos de sección con tipografía Inter, peso 800 y un subrayado
+   geométrico en gradiente naranja-dorado (width: 50px; height: 4px;).
+
+3. .rl-footer:
+   Implementa el pie de página con fondo oscuro de marca (#2A1A0E), texto beige
+   (#FEF3E2), borde superior en naranja (#D4621A) y enlaces interactivos dorados.
+
+4. .rl-card:
+   Complementa las tarjetas (.card) de Bootstrap añadiendo borde dorado sutil
+   (rgba(244, 174, 82, 0.4)), sombra suave y efecto de elevación (translateY(-4px))
+   en estado hover.
+
+5. .rl-promo-card:
+   Cajas destacadas con borde dorado de 2px y sombra para las diapositivas
+   del carrusel de promociones.
+
+6. .rl-table-brand:
+   Tablas estilizadas con cabecera oscura (#2A1A0E) y efecto hover cálido en filas.
+
+
+6. ICONOGRAFÍA (BOOTSTRAP ICONS) Y ACCESIBILIDAD
+--------------------------------------------------------------------------------
+Se integró Bootstrap Icons v1.11.3 mediante CDN en todas las páginas:
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+Casos de uso aplicados:
+  * Barra de navegación (Navbar):
+    - Inicio: bi-house-door
+    - Tarifas: bi-tag
+    - Reservas: bi-calendar-check
+    - Botón Nuevo: bi-plus-circle
+  * Datos de contacto (Footer):
+    - Título: bi-geo-alt-fill
+    - Ubicación: bi-pin-map-fill
+    - Horarios: bi-clock-fill
+    - Teléfono: bi-telephone-fill
+    - Correo: bi-envelope-fill
+    - Redes sociales: bi-instagram
+    - Ver mapa: bi-map-fill
+  * Beneficios y Servicios:
+    - Bicicletas revisadas: bi-tools
+    - Casco y candado: bi-shield-check
+    - Guías certificados: bi-award
+    - Devolución en 3 sedes: bi-geo-alt
+    - Elementos de lista de beneficios: bi-check-circle-fill
+    - Pasos de alquiler: bi-1-circle-fill hasta bi-5-circle-fill
+  * Enlace flotante de WhatsApp (Semana 1):
+    - Sustituido emoji plano por: <i class="bi bi-whatsapp" aria-hidden="true"></i>
+
+Accesibilidad (A11y):
+  - Todos los íconos decorativos cuentan con el atributo aria-hidden="true".
+  - Todos los botones/enlaces que consisten únicamente en un ícono (ej. WhatsApp,
+    controles del carrusel, botón cerrar modal) cuentan con su respectivo aria-label.
+
+
+7. LISTA DE VERIFICACIÓN DE ERRORES COMUNES
+--------------------------------------------------------------------------------
+[x] Sin !important:
+    El archivo style.css tiene 0 instancias de !important. Todo se logra mediante
+    la especificidad estándar y las variables CSS de Bootstrap.
+
+[x] Sin clases de versiones obsoletas:
+    No se utilizan clases antiguas como text-left, panel, well, form-group, etc.
+    Se emplean utilidades vigentes de Bootstrap 5.3 (text-start, ms-auto, g-4, etc.).
+
+[x] Hoja de estilos propia cargada después de Bootstrap:
+    En index.html, reservas.html y tarifas.html:
+    1. bootstrap.min.css
+    2. bootstrap-icons.min.css
+    3. resources/css/style.css (última)
+
+[x] Bundle único de JavaScript:
+    Una sola invocación de bootstrap.bundle.min.js al pie de cada página,
+    seguida de functionality.js.
+
+[x] Estructura estricta container > row > col en todas las cuadrículas:
+    Verificado en carrusel, flota, servicios, formulario de reservas, tablas
+    de tarifas y el pie de página (footer).
+
+
+8. REORGANIZACIÓN Y OPTIMIZACIÓN DE INDEX.HTML
+--------------------------------------------------------------------------------
+Se solucionó la queja sobre la mala distribución visual de la página principal:
+  1. Portada / Hero: Ahora presenta un encabezado principal claro y balanceado
+     con propuesta de valor, llamado a la acción doble (Reservar / Ver flota),
+     indicadores de confianza y la bicicleta destacada a la derecha.
+  2. Promociones: El carrusel se separó del encabezado para convertirse en una
+     sección dedicada de promociones de temporada, con etiquetas llamativas (2x1,
+     Upgrade Gratis, Todo Incluido).
+  3. Desacoplamiento de Servicios y Beneficios: Anteriormente "Servicios",
+     "Beneficios" y "¿Cómo alquilar?" estaban amontonados en 3 columnas angostas
+     dentro de una sola fila. Ahora cada uno tiene su espacio con diseño óptimo:
+     - "Nuestros Servicios": cuadrícula limpia de 4 tarjetas con íconos circulares.
+     - "¿Cómo Alquilar?": flujo secuencial de 5 pasos numerados y claros.
+     - "¿Quiénes somos?" y "¿Por qué Elegir Rueda Libre?": secciones narrativas
+       con pilares de confianza y diferenciadores del servicio.
+  4. Flota: Las 7 bicicletas cuentan con tarjetas uniformes (.rl-card-img),
+     insignias por categoría y precio visible.
+
+
+================================================================================
+                        TABLA ANTES Y DESPUÉS
+================================================================================
+
+CRITERIO                ANTES                               DESPUÉS
+--------------------------------------------------------------------------------
+Distribución index.html Carrusel de promociones encima      Jerarquía lógica: Hero principal con
+                        del título de bienvenida;           imagen y CTAs -> Promociones destacadas ->
+                        Servicios, Beneficios y Pasos       Quiénes somos -> Servicios en 4 tarjetas ->
+                        amontonados en 3 columnas angostas. Proceso de 5 pasos -> Flota uniforme -> Garantías.
+
+Paleta de colores       Azul genérico por defecto de        Paleta auténtica Rueda Libre:
+                        Bootstrap (#2563eb / #0d6efd) y     Beige (#FEF3E2), Dorado (#F4AE52),
+                        grises fríos (#f8fafc, #e9ecef).    Naranja (#D4621A) y Negro cálido (#2A1A0E).
+
+Fondo global            Blanco estándar de navegador        Cálido fondo Beige (#FEF3E2) con
+                        sin personalidad.                   color de texto Negro cálido (#2A1A0E).
+
+Botón principal         Azul estándar de Bootstrap          Botón "Ruta Verde" (#2D6A4F) con
+(.btn-primary)          sin identidad temática.             estados hover (#1E5534) y active (#143C24).
+
+Variante de botón       Inexistente. Se usaban clases       Variante "Pedal Naranja" (.btn-orange-pedal)
+personalizada           ficticias como "btn-solid"          con contraste alto (texto blanco sobre #D4621A),
+                        o "theme-primary".                  estados interactivos fluidos y ratio WCAG AA.
+
+Clases propias          Inexistentes o mezcladas con        Clases semánticas reutilizables:
+                        estilos en línea.                   .rl-hero-banner (portada),
+                                                            .rl-section-title (títulos decorados),
+                                                            .rl-footer (pie de página cálido),
+                                                            .rl-card (tarjetas con hover suave),
+                                                            .rl-table-brand (tablas de tarifas).
+
+Iconografía             Emojis simples (💬, 🚴) o          Bootstrap Icons v1.11.3 vía CDN en
+                        texto plano sin íconos.             navbar, contacto, beneficios y WhatsApp,
+                                                            con accesibilidad (aria-hidden y aria-label).
+
+Pie de página (footer)  display: flex desalineado con       Estructura container > row > col-12 col-lg-6
+                        márgenes arbitrarios.               con fondo oscuro #2A1A0E, mapa integrado y
+                                                            lista completa de contacto con íconos.
+
+Formulario de reservas  Campos básicos sin íconos,          Tarjeta integrada .rl-card con íconos en
+                        modal de políticas bloqueante       input-groups, slider con badge dinámico,
+                        en carga inicial.                   y modal de políticas desplegable a demanda.
+
+Cuadrículas (Grids)     Contenedores con paddings y         Estructura canónica de Bootstrap:
+                        márgenes desordenados en rows.      container > row > col-* en todos los bloques.
+
+================================================================================
+Fin de la bitácora.

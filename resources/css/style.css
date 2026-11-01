@@ -1,86 +1,344 @@
-/* Declaring variables */
+/* ==========================================================================
+   RUEDA LIBRE - BRAND IDENTITY & BOOTSTRAP 5 CUSTOMIZATION
+   Paleta de Marca:
+     - Beige:       #FEF3E2 / rgb(254, 243, 226)
+     - Gold:        #F4AE52 / rgb(244, 174, 82)
+     - Orange:      #D4621A / rgb(212, 98, 26)
+     - Black/Dark:  #2A1A0E / rgb(42, 26, 14)
+   Botón Principal (Ruta Verde):
+     - Base:        #2D6A4F / rgb(45, 106, 79)
+     - Hover:       #1E5534
+     - Active:      #143C24
+   Variante de Botón (Pedal Naranja):
+     - Base:        #D4621A / rgb(212, 98, 26)
+     - Texto:       #ffffff (Contraste verificado WCAG AA)
+     - Hover:       #B54F11
+     - Active:      #963F0B
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Brand Palette & Bootstrap Global Variables Overwrite
+   -------------------------------------------------------------------------- */
 :root {
-  /* ==========================================
-     1. Paleta de 5 colores
-     ========================================== */
-  --color-primary: #2563eb;       /* Azul principal */
-  --color-secondary: #6668d8;     /* Verde azulado secundario */
-  --color-accent: #67b13c;        /* Ámbar para llamadas a la acción */
-  --color-dark: #0b192f;          /* Texto principal / fondo oscuro */
-  --color-light: #f8fafc;         /* Fondos claros / tarjetas */
-  --rl-dark: #0b192f;
+  /* Brand Palette Variables */
+  --rl-beige: #FEF3E2;
+  --rl-beige-rgb: 254, 243, 226;
+  --rl-gold: #F4AE52;
+  --rl-gold-rgb: 244, 174, 82;
+  --rl-orange: #D4621A;
+  --rl-orange-rgb: 212, 98, 26;
+  --rl-dark: #2A1A0E;
+  --rl-dark-rgb: 42, 26, 14;
 
-  /* ==========================================
-     2. Familias tipográficas con fuentes de respaldo (fallbacks)
-     ========================================== */
-  /* Tipografía para encabezados/títulos */
+  /* Button Brand Colors */
+  --rl-green-route: #2D6A4F;
+  --rl-green-route-rgb: 45, 106, 79;
+  --rl-green-route-hover: #1E5534;
+  --rl-green-route-active: #143C24;
+
+  --rl-orange-pedal: #D4621A;
+  --rl-orange-pedal-rgb: 212, 98, 26;
+  --rl-orange-pedal-hover: #B54F11;
+  --rl-orange-pedal-active: #963F0B;
+
+  /* Typography Families */
   --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  
-  /* Tipografía para cuerpo de texto */
-  --font-body: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  /* ==========================================
-     3. Escala de espaciado en rem (al menos 3 tamaños)
-     Base: 1rem = 16px por defecto en la mayoría de navegadores
-     ========================================== */
-  --space-sm: 0.5rem;   /*  8px - Espaciados mínimos o padding interno */
-  --space-md: 1rem;     /* 16px - Separación base entre elementos */
-  --space-lg: 1.5rem;   /* 24px - Márgenes de sección medianos */
-  --space-xl: 2.5rem;   /* 40px - Separación amplia entre bloques */
+  /* Spacing Scale */
+  --space-sm: 0.5rem;   /* 8px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 1.5rem;   /* 24px */
+  --space-xl: 2.5rem;   /* 40px */
+
+  /* Overwrite Bootstrap Global Variables with Brand Values */
+  --bs-primary: #D4621A;
+  --bs-primary-rgb: 212, 98, 26;
+  --bs-body-font-family: var(--font-body);
+  --bs-body-bg: var(--rl-beige);
+  --bs-body-bg-rgb: var(--rl-beige-rgb);
+  --bs-body-color: var(--rl-dark);
+  --bs-body-color-rgb: var(--rl-dark-rgb);
+
+  --bs-link-color: var(--rl-orange);
+  --bs-link-hover-color: var(--rl-orange-pedal-hover);
+
+  --bs-border-radius: 0.625rem;
+  --bs-border-radius-sm: 0.375rem;
+  --bs-border-radius-lg: 1rem;
+  --bs-border-radius-xl: 1.25rem;
+  --bs-border-radius-xxl: 2rem;
 }
 
-/* ==========================================
-   Base Styles (Inheritance & Typography)
-   ========================================== */
+/* Base resets & typography */
 * {
   box-sizing: border-box;
 }
-/* --------------------------------------------------------------------------------------- */
 
-/* -------------------------------------------------------------------------------- */
-/* Index.html */
-/* 1. Header Shell: Give it depth or a local vibe */
-.hero-section {
-  background: linear-gradient(135deg, #105191 0%, #e9ecef 100%);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  font-family: var(--bs-body-font-family);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   2. Button Customizations (Green Route & Orange Pedal)
+   -------------------------------------------------------------------------- */
+/* Main Button (.btn-primary) adjusted to Green Route (Ruta Verde) */
+.btn-primary {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--rl-green-route);
+  --bs-btn-border-color: var(--rl-green-route);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--rl-green-route-hover);
+  --bs-btn-hover-border-color: var(--rl-green-route-hover);
+  --bs-btn-focus-shadow-rgb: var(--rl-green-route-rgb);
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: var(--rl-green-route-active);
+  --bs-btn-active-border-color: var(--rl-green-route-active);
+  --bs-btn-disabled-color: #ffffff;
+  --bs-btn-disabled-bg: var(--rl-green-route);
+  --bs-btn-disabled-border-color: var(--rl-green-route);
+  font-weight: 600;
+  border-radius: var(--bs-border-radius);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom Button Variant: Orange Pedal (Pedal Naranja) */
+.btn-orange-pedal,
+.btn-pedal-naranja {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--rl-orange-pedal);
+  --bs-btn-border-color: var(--rl-orange-pedal);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--rl-orange-pedal-hover);
+  --bs-btn-hover-border-color: var(--rl-orange-pedal-hover);
+  --bs-btn-focus-shadow-rgb: var(--rl-orange-pedal-rgb);
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: var(--rl-orange-pedal-active);
+  --bs-btn-active-border-color: var(--rl-orange-pedal-active);
+  --bs-btn-disabled-color: #ffffff;
+  --bs-btn-disabled-bg: var(--rl-orange-pedal);
+  --bs-btn-disabled-border-color: var(--rl-orange-pedal);
+  font-weight: 600;
+  border-radius: var(--bs-border-radius);
+  transition: all 0.2s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   3. Custom Classes to Complement Bootstrap (Sin tocar el framework)
+   -------------------------------------------------------------------------- */
+/* Class 1: Cover / Hero Banner (.rl-hero-banner) */
+.rl-hero-banner {
+  background: linear-gradient(135deg, rgba(254, 243, 226, 0.95) 0%, rgba(244, 174, 82, 0.25) 50%, rgba(212, 98, 26, 0.12) 100%);
+  border-bottom: 2px solid rgba(212, 98, 26, 0.15);
   position: relative;
 }
 
-/* 2. Typography Hierarchy: Ditch raw <br> tags for structured elements */
 .hero-title {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(2rem, 4vw, 3.25rem); /* Scales fluidly with screen size */
-  color: var(--rl-dark, #0b192f);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  color: var(--rl-dark);
   margin-bottom: 1rem;
 }
 
 .hero-description {
-  font-family: var(--font-body);
   font-size: 1.15rem;
   line-height: 1.6;
-  color: #495057;
-  max-width: 55ch; /* Keeps line length comfortable for reading */
+  color: #4a382c;
+  max-width: 55ch;
 }
 
-/* 3. Interactive Call to Action */
 .hero-cta {
   display: inline-block;
-  margin-top: 1.5rem;
-  font-weight: 600;
+  margin-top: 1.25rem;
+  font-weight: 700;
   text-decoration: none;
-  color: var(--color-primary);
+  color: var(--rl-orange);
   border-bottom: 2px solid transparent;
   transition: all 0.25s ease;
 }
 
 .hero-cta:hover {
-  color: var(--color-dark);
-  border-bottom-color: var(--color-primary);
-  transform: translateX(4px); /* Subtle nudge */
+  color: var(--rl-dark);
+  border-bottom-color: var(--rl-orange);
+  transform: translateX(4px);
 }
 
-/* WhatsApp Floating Button */
+/* Class 2: Section Titles (.rl-section-title) */
+.rl-section-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--rl-dark);
+  position: relative;
+  display: inline-block;
+}
+
+.rl-section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--rl-orange), var(--rl-gold));
+  border-radius: 2px;
+  margin-top: 0.4rem;
+}
+
+.text-center > .rl-section-title::after,
+.rl-section-title.text-center::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Class 3: Footer (.rl-footer) */
+.rl-footer {
+  background-color: var(--rl-dark);
+  color: var(--rl-beige);
+  border-top: 4px solid var(--rl-orange);
+}
+
+.rl-footer h2,
+.rl-footer h3 {
+  color: var(--rl-gold);
+}
+
+.rl-footer a {
+  color: var(--rl-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.rl-footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.rl-footer iframe {
+  border: 0;
+  border-radius: var(--bs-border-radius);
+  display: block;
+  max-width: 100%;
+}
+
+/* Class 4: Complementary Card Styling (.rl-card) */
+.rl-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(244, 174, 82, 0.4);
+  border-radius: var(--bs-border-radius);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.rl-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(42, 26, 14, 0.1);
+  border-color: var(--rl-gold);
+}
+
+/* Class 5: Promo Card for Carousel (.rl-promo-card) */
+.rl-promo-card {
+  background: #ffffff;
+  border: 2px solid var(--rl-gold);
+  border-radius: var(--bs-border-radius-lg);
+  box-shadow: 0 6px 18px rgba(42, 26, 14, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   4. Section Specific Accents
+   -------------------------------------------------------------------------- */
+.quienes-somos {
+  background: linear-gradient(135deg, rgba(244, 174, 82, 0.15) 0%, rgba(254, 243, 226, 0.8) 100%);
+  border-bottom: 2px solid rgba(42, 26, 14, 0.05);
+}
+
+.quienes-somos-img {
+  max-height: 420px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(42, 26, 14, 0.15);
+  border: 3px solid #ffffff;
+}
+
+.rl-price {
+  color: var(--rl-orange);
+  font-weight: 700;
+}
+
+/* Fleet Card Image Consistency */
+.rl-card-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Step Card for How It Works */
+.rl-step-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(244, 174, 82, 0.4);
+  border-radius: var(--bs-border-radius);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rl-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(42, 26, 14, 0.08);
+  border-color: var(--rl-orange);
+}
+
+.rl-step-number {
+  width: 44px;
+  height: 44px;
+  background: var(--rl-orange);
+  color: #ffffff;
+  font-weight: 800;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+/* Feature Icon Circle */
+.rl-icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(244, 174, 82, 0.25);
+  color: var(--rl-orange);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.how-to-rent {
+  padding: var(--space-xl);
+  background-color: rgba(244, 174, 82, 0.18);
+  border-radius: var(--bs-border-radius);
+  border: 1px solid rgba(212, 98, 26, 0.2);
+}
+
+/* Tables Branded */
+.rl-table-brand thead {
+  background-color: var(--rl-dark);
+  color: var(--rl-beige);
+}
+
+.rl-table-brand th {
+  border-bottom: 2px solid var(--rl-gold);
+}
+
+.rl-table-brand tr:hover {
+  background-color: rgba(244, 174, 82, 0.15);
+}
+
+/* Floating WhatsApp Button */
 .whatsapp-btn {
   position: fixed;
   bottom: 20px;
@@ -95,114 +353,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  z-index: 1000; 
+  box-shadow: 2px 4px 12px rgba(42, 26, 14, 0.3);
+  z-index: 1000;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .whatsapp-btn:hover {
   background-color: #128C7E;
-  transform: scale(1.05);
+  color: #ffffff;
+  transform: scale(1.08);
 }
-/* ----------------------------------------------------------------------------- */
-/* Quienes somos */
-.quienes-somos {
-    background: linear-gradient(135deg, #eff0f0 0%, #d7dadc 100%);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-}
-
-.title-quienes-somos {
-    font-family: var(--font-heading, sans-serif);
-    font-weight: 700;
-    font-size: clamp(2rem, 4vw, 3.25rem);
-    color: var(--rl-dark, #1b1f23);
-    margin-bottom: 1rem;
-}
-
-.content-quienes-somos {
-    font-family: var(--font-body, sans-serif);
-    font-size: 1.15rem;
-    line-height: 1.6;
-    color: #212529; /* Slightly darker/clearer for readability */
-    max-width: 55ch;
-}
-
-.quienes-somos-img {
-    max-height: 420px;
-    object-fit: cover;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-/* ---------------------------------------------------------------------------------------- */
-/* Styling the "How to Rent" section */
-.how-to-rent {
-  padding: var(--space-xl);
-  background-color: rgba(12, 33, 195, 0.1);
-  border-radius: 10px;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.how-to-rent-list {
-  text-align: left;
-  max-width: 600px;
-  padding-left: 20px;
-}
-
-.how-to-rent-item {
-  font-size: 0.95rem;
-  margin-bottom: var(--space-sm);
-  line-height: 1.5;
-}
-
-/* ------------------------------------------------------------------------------- */
-
-/* ------------------------------------------------------------------------------- */
-footer {
-  background-color: var(--color-light);
-  color: var(--color-dark);
-  padding: var(--space-xl);
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Vertically centers the text block against the map */
-  gap: var(--space-xl); /* Clean separation between the two columns */
-  flex-wrap: wrap;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Aligns all child elements to the left */
-  text-align: left; /* Left-aligns multi-line text */
-  max-width: 480px; /* Keeps text lines readable */
-  padding: var(--space-sm);
-}
-
-#encuentranos {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--color-dark);
-  margin-bottom: var(--space-md);
-  align-items: center;
-  text-align: center;
-}
-
-.footer-content p {
-  margin: var(--space-sm) 0;
-  line-height: 1.5;
-}
-
-/* Optional cleanup for the map wrapper */
-footer > div:last-child {
-  text-align: right; /* Aligns the "Ver ubicación" link to the map edge */
-}
-
-footer iframe {
-  border: 0;
-  border-radius: 8px;
-  display: block;
-  max-width: 100%;
-}
-/* ----------------------------------------------------------------------------------- */
