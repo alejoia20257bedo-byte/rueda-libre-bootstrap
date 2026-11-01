@@ -1,36 +1,57 @@
-// Alerta de politicas de alquiler
-const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-const appendAlert = (message, type) => {
-    const wrapper = document.createElement('div')
-    wrapper.innerHTML = [
-        `<div class="alert theme-${type}" role="alert">`,
-        `   <p>${message}</p>`,
-        '   <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>',
-        '</div>'
-    ].join('')
+// Functionality for Rueda Libre website
 
-    alertPlaceholder.append(wrapper)
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Age Range Slider sync (reservas.html)
+    const rangeInput = document.getElementById('rangeEdad');
+    const rangeOutput = document.getElementById('rangeValue');
+    if (rangeInput && rangeOutput) {
+        rangeInput.addEventListener('input', function () {
+            rangeOutput.textContent = this.value;
+        });
+    }
 
-const alertTrigger = document.getElementById('liveAlertBtn')
-if (alertTrigger) {
-    alertTrigger.addEventListener('click', () => {
-        appendAlert('<h3>Estas son las políticas:</h3> <ol><li>Presenta tu documento de identidad original al recoger la bicicleta.</li> <li>Revisa la bicicleta con el asesor antes de salir.</li> <li>Cada 15 minutos de retraso en la devolución tienen un recargo de $5.000.</li> <li>Los daños por mal uso se cobran según el costo de la reparación.</li><li> Los menores de edad deben estar acompañados por un adulto responsable.</li></ol>', 'success')
-    })
-}
+    // 2. Rental policies alert modal (reservas.html)
+    const alertBox = document.getElementById('politicasAlert');
+    const openBtn = document.getElementById('openAlertBtn');
+    const closeBtn = document.getElementById('closeAlertBtn');
 
-// Form 
-// Fetch all forms that need custom Bootstrap validation styles
-const forms = document.querySelectorAll('.needs-validation');
+    if (alertBox && openBtn) {
+        openBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alertBox.classList.remove('d-none');
+            setTimeout(() => {
+                alertBox.classList.add('show');
+            }, 10);
+        });
+    }
 
-// Loop over them and prevent submission on invalid data
-Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
+    if (alertBox && closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            alertBox.classList.remove('show');
+            setTimeout(() => {
+                alertBox.classList.add('d-none');
+            }, 150); // Matches Bootstrap fade transition
+        });
+    }
+
+    // 3. Dynamic minimum reservation date
+    const fechaInput = document.getElementById('validationFecha');
+    if (fechaInput) {
+        const today = new Date().toISOString().split('T')[0];
+        if (!fechaInput.min || fechaInput.min < today) {
+            fechaInput.min = today;
         }
+    }
 
-        form.classList.add('was-validated');
-    }, false);
+    // 4. Form validation for all forms with .needs-validation
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+    });
 });

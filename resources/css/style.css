@@ -8,6 +8,7 @@
   --color-accent: #67b13c;        /* Ámbar para llamadas a la acción */
   --color-dark: #0b192f;          /* Texto principal / fondo oscuro */
   --color-light: #f8fafc;         /* Fondos claros / tarjetas */
+  --rl-dark: #0b192f;
 
   /* ==========================================
      2. Familias tipográficas con fuentes de respaldo (fallbacks)
@@ -50,7 +51,7 @@
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: clamp(2rem, 4vw, 3.25rem); /* Scales fluidly with screen size */
-  color: var(--rl-dark);
+  color: var(--rl-dark, #0b192f);
   margin-bottom: 1rem;
 }
 

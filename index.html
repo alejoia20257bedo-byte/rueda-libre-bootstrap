@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./resources/css/style.css">
 </head>
 
@@ -38,7 +38,7 @@
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-black" href="./reservas.html">Nuevo</a>
+                        <a class="btn btn-primary text-white" href="./reservas.html">Nuevo</a>
                     </li>
                 </ul>
             </div>
@@ -46,45 +46,43 @@
     </nav>
 
     <header class="hero-section text-center text-md-start">
-        <div id="carouselExampleContent" class="carousel slide">
+        <div id="carouselExampleContent" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-inner rounded-5">
-                <div class="carousel-item active">
-                    <div class="d-flex flex-column justify-content-center text-center bg-subtle-primary p-9 bg-1 rounded-5"
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <div class="d-flex flex-column justify-content-center text-center bg-primary-subtle p-5 rounded-5"
                         style="min-height: 320px;">
-                        <h3>Promo "Dúo Urbano":</h3>
-                        <p class="fg-emphasis-secondary mb-3">2x1 en la segunda persona o combo de recorrido guiado + alquiler libre.</p>
-                        <div><a class=" btn btn-primary theme-primary" href="./reservas.html">Reservar</a></div>
+                        <h3 class="fw-bold">Promo "Dúo Urbano":</h3>
+                        <p class="text-body-secondary mb-3">2x1 en la segunda persona o combo de recorrido guiado + alquiler libre.</p>
+                        <div><a class="btn btn-primary" href="./reservas.html">Reservar</a></div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column justify-content-center text-center bg-subtle-success p-9 bg-2 rounded-5"
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="d-flex flex-column justify-content-center text-center bg-success-subtle p-5 rounded-5"
                         style="min-height: 320px;">
-                        <h3>Promo "Explora el Barrio"</h3>
-                        <p class="fg-emphasis-secondary mb-3">Recorrido guiado de 3 horas con upgrade de bicicleta de montaña incluido.</p>
-                        <div><a class="btn btn-primary theme-success" href="./reservas.html">Reservar</a></div>
+                        <h3 class="fw-bold">Promo "Explora el Barrio"</h3>
+                        <p class="text-body-secondary mb-3">Recorrido guiado de 3 horas con upgrade de bicicleta de montaña incluido.</p>
+                        <div><a class="btn btn-success" href="./reservas.html">Reservar</a></div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column justify-content-center text-center bg-subtle-warning p-9 bg-3 rounded-5"
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="d-flex flex-column justify-content-center text-center bg-warning-subtle p-5 rounded-5"
                         style="min-height: 320px;">
-                        <h3>Promo "Conquista Las Palmas"</h3>
-                        <p class="fg-emphasis-secondary mb-3">Paquete Todo Incluido Reto Las Palmas + Bicicleta Eléctrica.</p>
-                        <div><a class="btn btn-primary theme-inverse" href="./reservas.html">Reservar</a></div>
+                        <h3 class="fw-bold">Promo "Conquista Las Palmas"</h3>
+                        <p class="text-body-secondary mb-3">Paquete Todo Incluido Reto Las Palmas + Bicicleta Eléctrica.</p>
+                        <div><a class="btn btn-dark" href="./reservas.html">Reservar</a></div>
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-center gap-2">
-                <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselExampleContent"
-                    data-bs-slide="prev" style="--bs-carousel-control-icon-width: 1rem;">
-                    <span class="carousel-icon-prev" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselExampleContent"
-                    data-bs-slide="next" style="--bs-carousel-control-icon-width: 1rem;">
-                    <span class="carousel-icon-next" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleContent"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleContent"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
         </div>
         <div class="container py-5">
             <div class="row align-items-center">
@@ -101,7 +99,7 @@
     </header>
 
     <main>
-        <section class="quienes-somos py-5">
+        <section class="quienes-somos py-5" id="quienes-somos">
             <div class="container">
                 <div class="row align-items-center g-4">
                     <!-- Left side: Text -->
@@ -398,6 +396,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="./resources/js/functionality.js"></script>
 </body>
 
 </html>
