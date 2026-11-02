@@ -270,53 +270,6 @@ main {
   font-weight: 700;
 }
 
-/* Fleet Card Image Consistency */
-.rl-card-img {
-  height: 200px;
-  object-fit: cover;
-}
-
-/* Step Card for How It Works */
-.rl-step-card {
-  background-color: #ffffff;
-  border: 1px solid rgba(244, 174, 82, 0.4);
-  border-radius: var(--bs-border-radius);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.rl-step-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(42, 26, 14, 0.08);
-  border-color: var(--rl-orange);
-}
-
-.rl-step-number {
-  width: 44px;
-  height: 44px;
-  background: var(--rl-orange);
-  color: #ffffff;
-  font-weight: 800;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.75rem;
-}
-
-/* Feature Icon Circle */
-.rl-icon-circle {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: rgba(244, 174, 82, 0.25);
-  color: var(--rl-orange);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
 .how-to-rent {
   padding: var(--space-xl);
   background-color: rgba(244, 174, 82, 0.18);

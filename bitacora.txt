@@ -175,37 +175,12 @@ Accesibilidad (A11y):
     de tarifas y el pie de página (footer).
 
 
-8. REORGANIZACIÓN Y OPTIMIZACIÓN DE INDEX.HTML
---------------------------------------------------------------------------------
-Se solucionó la queja sobre la mala distribución visual de la página principal:
-  1. Portada / Hero: Ahora presenta un encabezado principal claro y balanceado
-     con propuesta de valor, llamado a la acción doble (Reservar / Ver flota),
-     indicadores de confianza y la bicicleta destacada a la derecha.
-  2. Promociones: El carrusel se separó del encabezado para convertirse en una
-     sección dedicada de promociones de temporada, con etiquetas llamativas (2x1,
-     Upgrade Gratis, Todo Incluido).
-  3. Desacoplamiento de Servicios y Beneficios: Anteriormente "Servicios",
-     "Beneficios" y "¿Cómo alquilar?" estaban amontonados en 3 columnas angostas
-     dentro de una sola fila. Ahora cada uno tiene su espacio con diseño óptimo:
-     - "Nuestros Servicios": cuadrícula limpia de 4 tarjetas con íconos circulares.
-     - "¿Cómo Alquilar?": flujo secuencial de 5 pasos numerados y claros.
-     - "¿Quiénes somos?" y "¿Por qué Elegir Rueda Libre?": secciones narrativas
-       con pilares de confianza y diferenciadores del servicio.
-  4. Flota: Las 7 bicicletas cuentan con tarjetas uniformes (.rl-card-img),
-     insignias por categoría y precio visible.
-
-
 ================================================================================
                         TABLA ANTES Y DESPUÉS
 ================================================================================
 
 CRITERIO                ANTES                               DESPUÉS
 --------------------------------------------------------------------------------
-Distribución index.html Carrusel de promociones encima      Jerarquía lógica: Hero principal con
-                        del título de bienvenida;           imagen y CTAs -> Promociones destacadas ->
-                        Servicios, Beneficios y Pasos       Quiénes somos -> Servicios en 4 tarjetas ->
-                        amontonados en 3 columnas angostas. Proceso de 5 pasos -> Flota uniforme -> Garantías.
-
 Paleta de colores       Azul genérico por defecto de        Paleta auténtica Rueda Libre:
                         Bootstrap (#2563eb / #0d6efd) y     Beige (#FEF3E2), Dorado (#F4AE52),
                         grises fríos (#f8fafc, #e9ecef).    Naranja (#D4621A) y Negro cálido (#2A1A0E).
