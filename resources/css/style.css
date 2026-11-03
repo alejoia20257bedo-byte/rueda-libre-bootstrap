@@ -35,7 +35,6 @@
 * {
   box-sizing: border-box;
 }
-/* --------------------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------------- */
 /* Index.html */
@@ -46,7 +45,7 @@
   position: relative;
 }
 
-/* 2. Typography Hierarchy: Ditch raw <br> tags for structured elements */
+/* 2. Typography Hierarchy */
 .hero-title {
   font-family: var(--font-heading);
   font-weight: 800;
@@ -105,60 +104,44 @@
   background-color: #128C7E;
   transform: scale(1.05);
 }
+
 /* ----------------------------------------------------------------------------- */
 /* Quienes somos */
 .quienes-somos {
-    /* background: linear-gradient(135deg, #eff0f0 0%, #d7dadc 100%); */
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
 }
 
 .title-quienes-somos {
-    /* font-family: var(--font-heading, sans-serif); */
-    /* font-weight: 300; */
-    /* font-size: clamp(2rem, 4vw, 3.25rem); */
-    color: var(--rl-dark, #1b1f23);
-    margin-bottom: 1rem;
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 700;
+  color: var(--rl-dark, #1b1f23);
+  margin-bottom: 1rem;
 }
 
 .content-quienes-somos {
-    /* font-family: var(--font-body, sans-serif); */
-    /* font-size: 1.15rem; */
-    /* line-height: 1.6; */
-    /* color: #212529; Slightly darker/clearer for readability */
-    /* max-width: 55ch; */
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #212529;
+  max-width: 55ch;
 }
 
 .quienes-somos-img {
-    max-height: 420px;
-    object-fit: cover;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-/* ---------------------------------------------------------------------------------------- */
-/* Styling the "How to Rent" section */
-.how-to-rent {
-  padding: var(--space-xl);
-  background-color: rgba(12, 33, 195, 0.1);
-  border-radius: 10px;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  max-height: 420px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.how-to-rent-list {
-  text-align: left;
-  max-width: 600px;
-  padding-left: 20px;
-}
-
-.how-to-rent-item {
-  font-size: 0.95rem;
-  margin-bottom: var(--space-sm);
-  line-height: 1.5;
+/* Fleet Cards Image Uniformity */
+.card-img-top {
+  height: 200px;
+  object-fit: contain;
+  padding: var(--space-sm);
+  background-color: #ffffff;
 }
 
 /* ------------------------------------------------------------------------------- */
-
-/* ------------------------------------------------------------------------------- */
+/* Footer */
 footer {
   background-color: var(--color-light);
   color: var(--color-dark);
@@ -194,7 +177,7 @@ footer {
   line-height: 1.5;
 }
 
-/* Optional cleanup for the map wrapper */
+/* Cleanup for the map wrapper */
 footer > div:last-child {
   text-align: right; /* Aligns the "Ver ubicación" link to the map edge */
 }
@@ -205,4 +188,3 @@ footer iframe {
   display: block;
   max-width: 100%;
 }
-/* ----------------------------------------------------------------------------------- */

@@ -15,6 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const openBtn = document.getElementById('openAlertBtn');
     const closeBtn = document.getElementById('closeAlertBtn');
 
+    const hideAlert = () => {
+        if (alertBox && !alertBox.classList.contains('d-none')) {
+            alertBox.classList.remove('show');
+            setTimeout(() => {
+                alertBox.classList.add('d-none');
+            }, 150); // Matches Bootstrap fade transition
+        }
+    };
+
     if (alertBox && openBtn) {
         openBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -26,20 +35,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (alertBox && closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            alertBox.classList.remove('show');
-            setTimeout(() => {
-                alertBox.classList.add('d-none');
-            }, 150); // Matches Bootstrap fade transition
-        });
+        closeBtn.addEventListener('click', hideAlert);
     }
 
-    // 3. Dynamic minimum reservation date
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            hideAlert();
+        }
+    });
+
+    // Close on click outside alert box
+    document.addEventListener('click', (e) => {
+        if (alertBox && !alertBox.classList.contains('d-none')) {
+            if (!alertBox.contains(e.target) && openBtn && !openBtn.contains(e.target)) {
+                hideAlert();
+            }
+        }
+    });
+
+    // 3. Dynamic minimum reservation date (using local date instead of UTC to avoid timezone shift)
     const fechaInput = document.getElementById('validationFecha');
     if (fechaInput) {
-        const today = new Date().toISOString().split('T')[0];
-        if (!fechaInput.min || fechaInput.min < today) {
-            fechaInput.min = today;
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const localToday = `${year}-${month}-${day}`;
+
+        if (!fechaInput.min || fechaInput.min < localToday) {
+            fechaInput.min = localToday;
         }
     }
 
@@ -50,6 +75,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!form.checkValidity()) {
                 event.preventDefault();
                 event.stopPropagation();
+            } else {
+                event.preventDefault();
+                // Show confirmation message if present
+                const successMsg = document.getElementById('reservationSuccess');
+                if (successMsg) {
+                    successMsg.classList.remove('d-none');
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    alert('¡Reserva enviada con éxito! Nos pondremos en contacto contigo pronto.');
+                }
+                form.reset();
+                form.classList.remove('was-validated');
+                if (rangeInput && rangeOutput) {
+                    rangeOutput.textContent = rangeInput.value;
+                }
+                return;
             }
             form.classList.add('was-validated');
         }, false);

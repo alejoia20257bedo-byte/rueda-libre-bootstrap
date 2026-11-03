@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <!-- Brand logo wrapper with a controlled height -->
@@ -38,41 +39,36 @@
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="btn btn-primary text-white" href="./reservas.html">Nuevo</a>
+                        <a class="btn btn-primary text-white" href="./reservas.html">Reservar</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Header Section -->
     <header class="py-5 text-center bg-body-tertiary">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-8" style="font-family: var(--font-heading);">
-                    <h1 class="display-5 fw-bold mb-3">Tarifas</h1>
+                <div class="col-12 col-md-8">
+                    <h1 class="display-5 fw-bold mb-3" style="font-family: var(--font-heading);">Tarifas</h1>
                     <p class="lead text-muted">Consulta nuestras tarifas de alquiler de bicicletas y recorridos guiados en Medellín.</p>
                 </div>
             </div>
         </div>
     </header>
 
-
     <main>
-        <section>
+        <!-- Tarifas de Bicicletas -->
+        <section class="py-4">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 mt-5 mb-4">
+                    <div class="col-12 mb-3">
                         <h2 style="font-family: var(--font-heading);">Tarifas de Bicicletas</h2>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
+                    <div class="col-12">
                         <div class="table-responsive">
-                            <table class="table table-dark table-striped">
+                            <table class="table table-dark table-striped table-hover align-middle">
                                 <thead>
                                     <tr>
                                         <th scope="col">Tipo de bicicleta</th>
@@ -108,22 +104,16 @@
             </div>
         </section>
 
-        <section>
+        <!-- Tarifas de Recorridos Guiados -->
+        <section class="py-4">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 mt-5 mb-4">
+                    <div class="col-12 mb-3">
                         <h2 style="font-family: var(--font-heading);">Tarifas de Recorridos Guiados</h2>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
+                    <div class="col-12">
                         <div class="table-responsive">
-                            <table class="table table-dark table-striped">
+                            <table class="table table-dark table-striped table-hover align-middle">
                                 <thead>
                                     <tr>
                                         <th scope="col">Recorrido</th>
@@ -163,13 +153,13 @@
             </div>
         </section>
 
-        <section>
+        <!-- Info & CTA -->
+        <section class="py-4">
             <div class="container">
                 <div class="row">
                     <div class="col text-center p-4">
-                        <p>
-                            Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las
-                            7:00 a. m.
+                        <p class="mb-3">
+                            Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a. m.
                             <br>
                             Qué llevar: ropa cómoda, agua, protector solar y documento de identidad.
                         </p>
@@ -180,13 +170,13 @@
         </section>
     </main>
 
-
-
+    <!-- WhatsApp Button -->
     <a href="https://wa.me/573001234567" class="whatsapp-btn" target="_blank" rel="noopener noreferrer"
         aria-label="Chat on WhatsApp">
         💬
     </a>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <h2 id="encuentranos">Encuéntranos</h2>
@@ -210,12 +200,13 @@
                 referrerpolicy="strict-origin-when-cross-origin">
             </iframe>
         </div>
-
     </footer>
 
+    <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <!-- Custom JS -->
     <script src="./resources/js/functionality.js"></script>
 </body>
 

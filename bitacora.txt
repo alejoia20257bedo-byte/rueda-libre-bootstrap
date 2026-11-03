@@ -1,0 +1,166 @@
+================================================================================
+                    BITÁCORA DE DESARROLLO - RUEDA LIBRE
+               Corrección de Errores y Optimización Bootstrap 5
+================================================================================
+
+1. RESUMEN GENERAL
+--------------------------------------------------------------------------------
+Se realizó una auditoría y corrección exhaustiva de errores (bugs) de maquetación,
+responsividad, lógica interactiva en JavaScript, accesibilidad (WCAG) y enlaces
+en todo el proyecto de Rueda Libre (index.html, reservas.html, tarifas.html,
+practice.html, style.css y functionality.js).
+
+Se respetó la estructura y estilo propios desarrollados con Bootstrap 5,
+resolviendo fallos técnicos sin alterar la identidad visual deseada.
+
+
+2. DETALLE DE ERRORES CORREGIDOS POR ARCHIVO
+--------------------------------------------------------------------------------
+
+A) practice.html:
+   * Bug: La etiqueta <link> y el script referenciaban Bootstrap versión 5.3.8
+     (https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/...), la cual no existe
+     en los repositorios oficiales de Bootstrap ni en CDN jsDelivr, provocando
+     errores 404 y la falta de carga de estilos y scripts.
+   * Solución: Se actualizó a la versión estable oficial 5.3.3 tanto para el
+     CSS como para el bundle JS.
+
+B) index.html:
+   * Bug 1 (Carrusel de Promociones):
+     - Las diapositivas 2 y 3 carecían de padding uniforme (p-5), causando un
+       salto de diseño abrupto al transicionar entre promociones.
+     - Las diapositivas no contaban con fondo contenedor propio, proyectando
+       texto oscuro (carousel-dark / text-body-secondary) directamente sobre
+       el fondo degradado azul oscuro (#105191) de .hero-section, resultando
+       ilegible por falta de contraste.
+     - Solución: Se asignaron contenedores con fondos sutiles nativos de
+       Bootstrap (bg-primary-subtle, bg-success-subtle, bg-warning-subtle),
+       con padding consistente (p-5), bordes redondeados (rounded-4) y
+       sombra suave, garantizando contraste adecuado y transiciones suaves.
+   * Bug 2 (Cuadrícula rígida en "¿Cómo alquilar?"):
+     - Se utilizaba la clase fija "col-6" para las 4 tarjetas del proceso.
+       En dispositivos móviles estrechos (<576px) esto reducía cada tarjeta
+       a menos de 150px provocando saltos de línea antiestéticos; y en
+       pantallas de escritorio obligaba a mantener 2 columnas en lugar de 4.
+     - Solución: Se sustituyó por "col-12 col-sm-6 col-lg-3", permitiendo 1
+       columna en móviles, 2 en tablets y 4 en una sola fila en escritorio.
+     - Se añadió "mb-0" al párrafo dentro del contenedor flex para evitar
+       que el margen inferior por defecto de Bootstrap descentrara el texto.
+   * Bug 3 (Anidamiento incorrecto en "Nuestros Servicios"):
+     - Una fila (<div class="row">) con padding "p-4" estaba anidada dentro
+       de una columna de otra fila con doble borde. Aplicar padding directamente
+       a una clase .row de Bootstrap entra en conflicto con las canaletas
+       (gutters) y sus márgenes negativos, generando desbordamiento horizontal.
+     - Solución: Se simplificó a una única fila canónica
+       row-cols-1 row-cols-sm-2 row-cols-lg-4 con espaciado "g-4" y bordes
+       limpios.
+   * Bug 4 (Uniformidad de imágenes de flota):
+     - La imagen "img2.png" posee una relación de aspecto cuadrada (554x554px),
+       mientras que las demás son panorámicas (678x452px, etc.), provocando
+       que la tarjeta de la bicicleta plegable fuera mucho más alta que las demás.
+     - Solución: Se aplicó a .card-img-top una altura fija de 200px con
+       object-fit: contain y fondo blanco para una presentación impecable.
+
+C) reservas.html:
+   * Bug 1 (Ausencia de encabezado <h1> y jerarquía semántica):
+     - La página no tenía ningún elemento <h1>, saltando directamente a <h2>,
+       lo cual incumple las directrices de accesibilidad WCAG y estándares SEO.
+     - La etiqueta <header> envolvía indebidamente al <nav> principal.
+     - Solución: Se extrajo el <nav> fuera del <header> y se creó un encabezado
+       principal estructurado con <h1 class="display-5 fw-bold mb-3">Reservas</h1>,
+       un subtítulo explicativo y enlace contextual a "¿Quiénes somos?",
+       homologando la estructura con tarifas.html e index.html.
+   * Bug 2 (Clase inexistente y márgenes indebidos en el formulario):
+     - Se utilizaba un <div class="responsive"> (clase inexistente en Bootstrap).
+     - La fila del formulario tenía clases "p-5 m-3", lo que anulaba los
+       márgenes negativos del sistema de rejilla de Bootstrap.
+     - Solución: Se organizó en un contenedor centrado con una tarjeta (.card)
+       limpia y espaciados válidos (p-4 p-md-5).
+   * Bug 3 (Retroalimentación de envío del formulario):
+     - Al enviar el formulario válido, la página se recargaba con un GET vacío
+     - Solución: Se integró una alerta de éxito dismissible (#reservationSuccess)
+       que confirma la recepción de la reserva y restablece el formulario.
+
+D) tarifas.html:
+   * Bug 1 (Fragmentación de secciones):
+     - Cada título y cada tabla estaban divididos en elementos <section>
+       independientes y aislados con márgenes dispersos.
+     - Solución: Se unificó cada conjunto temático (Tarifas de Bicicletas y
+       Tarifas de Recorridos) en un único <section class="py-4">.
+   * Bug 2 (Experiencia visual de tablas):
+     - Se agregaron las clases "table-hover" y "align-middle" a las tablas
+       para facilitar la lectura y seguimiento visual de las filas.
+
+E) Barra de Navegación (Todas las páginas):
+   * Bug: El botón final de la barra de navegación tenía el texto "Nuevo",
+     el cual no comunicaba ninguna acción clara al usuario.
+   * Solución: Se cambió por "Reservar", sirviendo como llamada a la acción
+     (CTA) principal consistente hacia reservas.html.
+
+F) resources/js/functionality.js:
+   * Bug 1 (Desfase de zona horaria en fecha mínima):
+     - Se calculaba la fecha de hoy con "new Date().toISOString().split('T')[0]",
+       lo que en zonas horarias con UTC negativo (como Colombia UTC-5)
+       después de las 7:00 p.m. devolvía la fecha de mañana, bloqueando
+       indebidamente reservas para el día en curso.
+     - Solución: Se utilizó la fecha local mediante getFullYear(),
+       getMonth() + 1 y getDate().
+   * Bug 2 (Cierre y accesibilidad del cuadro de políticas):
+     - La ventana flotante #politicasAlert solo podía cerrarse dando clic
+       exacto a su botón de cierre.
+     - Solución: Se implementó cierre accesible mediante la tecla 'Escape'
+       y mediante clic fuera del cuadro emergente.
+   * Bug 3 (Gestión de envío exitoso del formulario):
+     - Se añadió soporte para mostrar el mensaje de confirmación de reserva
+       (#reservationSuccess) y reiniciar los campos validados tras un envío exitoso.
+
+G) resources/css/style.css:
+   * Bug: Código comentado en .title-quienes-somos y .content-quienes-somos
+     que dejaba sin aplicar las tipografías variables definidas en :root.
+   * Solución: Se limpiaron y activaron las reglas de estilo con tipografía
+     var(--font-heading) y var(--font-body), y se incorporó el ajuste
+     de altura y contención para las imágenes de las tarjetas de bicicletas.
+
+
+================================================================================
+                        TABLA ANTES Y DESPUÉS
+================================================================================
+
+CRITERIO                ANTES                               DESPUÉS
+--------------------------------------------------------------------------------
+Versión Bootstrap       practice.html usaba v5.3.8          v5.3.3 oficial y estable
+                        (inexistente, producía error 404).  en todo el proyecto.
+
+Carrusel index.html     Sin fondos en diapositivas, texto   Tarjetas con bg-*-subtle,
+                        oscuro ilegible sobre gradiente     p-5 uniforme y alto contraste
+                        azul, y padding desigual.           en todas las diapositivas.
+
+Sección ¿Cómo alquilar? col-6 rígido (amontonado en         col-12 col-sm-6 col-lg-3
+                        móviles, 2 filas en pantallas       (1 col en móviles, 2 en tablets,
+                        grandes) y texto descentrado.       4 en desktop) y mb-0 alineado.
+
+Grilla Servicios        Fila anidada con p-4 en col,        Estructura canónica row-cols
+                        conflicto con canaletas de grid.    con espaciado g-4 limpio.
+
+Imágenes de Flota       Alturas dispares (img2.png          Altura fija uniforme (200px) con
+                        cuadrada rompía la alineación).     object-fit: contain y fondo blanco.
+
+Estructura reservas     Sin encabezado <h1>; <nav>          <header> con <h1>Reservas</h1>;
+                        dentro de <header>; contenedor      <nav> independiente; tarjeta
+                        con clase "responsive" inexistente. centrada y semántica válida.
+
+Envío de formulario     Recarga de página sin respuesta.    Confirmación dinámica de éxito
+                                                            y reseteo limpio del formulario.
+
+Políticas de alquiler   Solo cerraba con clic en botón X.   Cierre accesible con tecla 'Escape'
+                                                            y clic fuera del modal.
+
+Cálculo fecha mínima    toISOString() cambiaba a mañana     Cálculo con hora local garantizando
+                        en horario nocturno de Colombia.    la fecha actual real.
+
+Botón en Navbar         Decía "Nuevo" (ambiguo).            Dice "Reservar" (CTA claro).
+
+Tablas de Tarifas       Secciones fragmentadas; tabla       Secciones unificadas por tema con
+                        oscura plana.                       table-hover y align-middle.
+================================================================================
+Fin de la bitácora.
