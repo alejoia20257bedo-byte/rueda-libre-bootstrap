@@ -40,43 +40,54 @@
 /* Index.html */
 /* 1. Header Shell: Give it depth or a local vibe */
 .hero-section {
-  background: linear-gradient(135deg, #105191 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #24b032 0%, #217cd7 100%);
   border-bottom: 2px solid rgba(0, 0, 0, 0.05);
   position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 5rem 0;
+
 }
 
 /* 2. Typography Hierarchy */
 .hero-title {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(2rem, 4vw, 3.25rem); /* Scales fluidly with screen size */
+  font-size: clamp(2.25rem, 5vw, 3.6rem); /* Scales fluidly with screen size */
+  line-height: 1.15;
   color: var(--rl-dark, #0b192f);
   margin-bottom: 1rem;
 }
 
 .hero-description {
-  font-family: var(--font-body);
-  font-size: 1.15rem;
+  /* font-family: var(--font-body); */
+  font-size: 1.25rem;
   line-height: 1.6;
-  color: #495057;
-  max-width: 55ch; /* Keeps line length comfortable for reading */
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 60ch; /* Keeps line length comfortable for reading */
 }
 
 /* 3. Interactive Call to Action */
 .hero-cta {
   display: inline-block;
-  margin-top: 1.5rem;
-  font-weight: 600;
+  margin-top: 2rem;
+  padding: 0.75rem 1.75rem;
+  background-color: #ffffff;
+  color: #0b192f;
+  font-weight: 700;
   text-decoration: none;
+  border-radius: 50px;
   color: var(--color-primary);
   border-bottom: 2px solid transparent;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   transition: all 0.25s ease;
 }
 
 .hero-cta:hover {
-  color: var(--color-dark);
-  border-bottom-color: var(--color-primary);
-  transform: translateX(4px); /* Subtle nudge */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  color: #0b192f;
 }
 
 /* WhatsApp Floating Button */
@@ -103,12 +114,34 @@
 .whatsapp-btn:hover {
   background-color: #128C7E;
   transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Gives each slide consistent full-width presence */
+.promo-slide {
+  min-height: 340px;
+  width: 100%;
+}
+
+/* Adjust control arrows so they don't hug the screen edges too tightly */
+#carouselExampleContent .carousel-control-prev {
+  left: 1.5rem;
+  width: auto;
+}
+
+#carouselExampleContent .carousel-control-next {
+  right: 1.5rem;
+  width: auto;
 }
 
 /* ----------------------------------------------------------------------------- */
 /* Quienes somos */
 .quienes-somos {
   border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
 }
 
 .title-quienes-somos {
@@ -140,6 +173,31 @@
   background-color: #ffffff;
 }
 
+.nuestros-servicios {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.beneficios-alquilar {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  margin: 40px;
+  padding: 40px;
+  background-color: rgb(166, 117, 117);
+}
+.como-alquilar {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+.why-rueda-libre{
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background-color: #6b91ce;
+}
 /* ------------------------------------------------------------------------------- */
 /* Footer */
 footer {
