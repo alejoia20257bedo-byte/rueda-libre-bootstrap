@@ -40,7 +40,7 @@
 /* Index.html */
 /* 1. Header Shell: Give it depth or a local vibe */
 .hero-section {
-  background: linear-gradient(135deg, #24b032 0%, #217cd7 100%);
+  background: linear-gradient(135deg, #093393 0%, #b68965 100%);
   border-bottom: 2px solid rgba(0, 0, 0, 0.05);
   position: relative;
   min-height: 70vh;
@@ -63,7 +63,7 @@
 .hero-description {
   /* font-family: var(--font-body); */
   font-size: 1.25rem;
-  line-height: 1.6;
+  line-height: 1.4;
   color: rgba(255, 255, 255, 0.9);
   max-width: 60ch; /* Keeps line length comfortable for reading */
 }
@@ -142,6 +142,7 @@
   min-height: 80vh;
   display: flex;
   align-items: center;
+  background: linear-gradient(135deg, #faebd3 0%, #4f52ee 100%);
 }
 
 .title-quienes-somos {
@@ -183,20 +184,25 @@
   min-height: 80vh;
   display: flex;
   align-items: center;
-  margin: 40px;
-  padding: 40px;
-  background-color: rgb(166, 117, 117);
+  /* margin: 40px 0; */
+  padding: 40px 0;
+  align-items: center;
+  background: linear-gradient(135deg, #0d458f 0%, #bdbefb 100%);
+  width: 100%;
+  color: white;
 }
+
 .como-alquilar {
   min-height: 80vh;
   display: flex;
   align-items: center;
+  background: linear-gradient(135deg, #e9eff7 0%, #d6d7f7 100%);
 }
 .why-rueda-libre{
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background-color: #6b91ce;
+  background: linear-gradient(135deg, #072ca6 0%, #fdebbf 100%);
 }
 /* ------------------------------------------------------------------------------- */
 /* Footer */
