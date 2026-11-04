@@ -164,3 +164,8 @@ Tablas de Tarifas       Secciones fragmentadas; tabla       Secciones unificadas
                         oscura plana.                       table-hover y align-middle.
 ================================================================================
 Fin de la bitácora.
+
+
+
+
+Tailwind CSS uses Just-In-Time (JIT) compilation / Ahead-of-Time tree-shaking. Unlike Bootstrap or the Play CDN (which injects styles in runtime in the browser), the Tailwind CLI scans all source files (.html, .js, etc.) looking for class names that match Tailwind's pattern syntax. Only utility classes actively detected in the source code are generated in output.css. Because bg-pink-500 is never used in index.html, the compiler never generates it, keeping production CSS bundles tiny (often < 15 KB).
