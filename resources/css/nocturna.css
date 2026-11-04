@@ -1,0 +1,13 @@
+/* 1. Invert the entire page and normalize colors */
+html.dark-mode {
+  filter: invert(1) hue-rotate(180deg);
+  background-color: #ffffff; /* Ensures the filter has a white base to turn black */
+}
+
+/* 2. Counter-invert media so images and videos look normal */
+html.dark-mode img,
+html.dark-mode video,
+html.dark-mode picture {
+  filter: invert(1) hue-rotate(180deg);
+}
+

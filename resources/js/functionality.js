@@ -96,3 +96,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }, false);
     });
 });
+// ----------------------------------------------------------------------------------------
+// Changing the color of the background in Noturna-rueda-libre 
