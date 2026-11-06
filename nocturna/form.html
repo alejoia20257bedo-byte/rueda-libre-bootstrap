@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <!-- Google Fonts: Montserrat (Headings & Display) & Open Sans (Body & Specs) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <!-- Dark Mode Filter Stylesheet -->
+    <link rel="stylesheet" href="../resources/css/nocturna.css">
+
+    <!-- Tailwind Play CDN Script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        opensans: ['"Open Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <nav
+        class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
+        <div class="px-4">
+            <div class="flex items-center justify-between">
+                <!-- Brand / Logo -->
+                <div class="flex shrink-0">
+                    <a aria-current="page" class="flex items-center" href="../index.html"
+                        aria-label="Inicio Rueda Libre">
+                        <img class="h-7 w-auto" src="../resources/icons/icon.png" alt="Rueda Libre">
+                        <p class="sr-only">Rueda Libre</p>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex md:items-center md:justify-center md:gap-5">
+                    <a aria-current="page"
+                        class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                        href="#rutas">Ver rutas</a>
+                    <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                        href="#como-funciona">Cómo funciona</a>
+                    <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                        href="../index.html">Home</a>
+                </div>
+
+                <!-- Action Controls (Theme Toggle & CTA) -->
+                <div class="flex items-center justify-end gap-2 sm:gap-3">
+                    <button type="button" id="theme-toggle" aria-label="Cambiar tema claro u oscuro"
+                        class="inline-flex items-center justify-center rounded-full bg-slate-200 px-3.5 py-1.5 sm:px-4 sm:py-2 text-sm font-semibold text-slate-800 shadow-sm transition hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
+                        ☾
+                    </button>
+
+
+                    <!-- Mobile Menu Hamburger Button -->
+                    <button type="button" id="mobile-menu-btn" aria-label="Abrir menú de navegación"
+                        aria-expanded="false"
+                        class="inline-flex md:hidden items-center justify-center p-2 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-slate-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Collapsible Menu -->
+            <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1 border-t border-gray-100 mt-2">
+                <a href="#rutas"
+                    class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Ver
+                    rutas</a>
+                <a href="#como-funciona"
+                    class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Cómo
+                    funciona</a>
+                <a href="../index.html"
+                    class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="min-h-[70vh] flex flex-col justify-center" style="min-height: 70vh; background-color: #bdbefb;">
+        <div class="mx-auto max-w-7xl px-4 pt-24 pb-16 text-center sm:px-6 lg:px-8 lg:pt-32">
+            <!-- Campaign Tag / Badge -->
+            <!-- Single H1 Title -->
+            <h1
+                class="mx-auto max-w-4xl text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl font-heading">
+                <span class="inline-block">
+                    <span class="relative whitespace-nowrap text-blue-600">
+                        <svg aria-hidden="true" viewBox="0 0 418 42"
+                            class="absolute top-2/3 left-0 h-[0.58em] w-full fill-blue-300/70"
+                            preserveAspectRatio="none">
+                            <path
+                                d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z">
+                            </path>
+                        </svg>
+                        <span class="relative">Rueda</span>
+                    </span>
+                </span>
+                <span class="inline-block">Nocturna Inscripción</span>
+            </h1>
+            <!-- Subtitle -->
+            <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed tracking-tight text-slate-600 sm:text-xl">
+                Descubre Medellín en bici cuando se encienden las luces.
+            </p>
+        </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="flex items-center justify-center p-12">
+                <!-- Author: FormBold Team -->
+                <div class="mx-auto w-full max-w-[550px] bg-white">
+                    <form>
+                        <div class="mb-5">
+                            <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                                Nombre completo
+                            </label>
+                            <input type="text" name="name" id="name" placeholder="Nombre completo" required minlength="3"
+                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="phone" class="mb-3 block text-base font-medium text-[#07074D]">
+                                Número de celular
+                            </label>
+                            <input type="tel" name="phone" id="phone" placeholder="El celular debe tener 10 dígitos y comenzar por 3" required pattern="3[0-9]{9}"
+                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
+                                Correo electrónico
+                            </label>
+                            <input type="email" name="email" id="email" placeholder="Escrribe tu Email" required
+                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationPlan" class="mb-3 block text-base font-medium text-[#07074D]">Escoge
+                                tu ruta:</label>
+                            <select class="form-select" id="validationPlan" required>
+                                <option value="">Abre el panel de opciones</option>
+                                <option value="1">Luces del Centro</option>
+                                <option value="2">Miradores de la Ciudad</option>
+                                <option value="3">Luna en Las Palmas</option>
+                            </select>
+                        </div>
+                        <div class="-mx-3 flex flex-wrap">
+                            <div class="w-full px-3 sm:w-1/2">
+                                <div class="mb-5">
+                                    <label for="date" class="mb-3 block text-base font-medium text-[#07074D]">
+                                        Fecha
+                                    </label>
+                                    <input type="date" name="date" id="date" min="2026-11-07" required
+                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                </div>
+                            </div>
+                            <div class="w-full px-3 sm:w-1/2">
+                                <div class="mb-5">
+                                    <label for="time" class="mb-3 block text-base font-medium text-[#07074D]">
+                                        Horario
+                                    </label>
+                                    <input type="time" name="time" id="time" required
+                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-5">
+                            <label for="numAcompa" class="mb-3 block text-base font-medium text-[#07074D]">
+                                Número de acompañantes
+                            </label>
+                            <input type="number" name="numAcompa" id="numAcompa" required min="0" max="3"
+                                placeholder="Escribe el número de acompañantes"
+                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium mb-2">Nivel de experiencia</label>
+                            <div class="flex flex-wrap -mx-2">
+                                <div class="px-2 w-1/3">
+                                    <label for="novato" class="block text-gray-700 font-medium mb-2">
+                                        <input type="radio" id="novato" name="color" value="novato" class="mr-2" required>Novato
+                                    </label>
+                                </div>
+                                <div class="px-2 w-1/3">
+                                    <label for="intermedio" class="block text-gray-700 font-medium mb-2">
+                                        <input type="radio" id="intermedio" name="intermedio" value="intermedio"
+                                            class="mr-2" required>Intermedio
+                                    </label>
+                                </div>
+                                <div class="px-2 w-1/3">
+                                    <label for="avanzado" class="block text-gray-700 font-medium mb-2">
+                                        <input type="radio" id="avanzado" name="avanzado" value="avanzado"
+                                            class="mr-2" required>Avanzado
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium mb-2">¿Tiene bicicleta propia?</label>
+                            <div class="flex flex-wrap -mx-2">
+                                <div class="px-2 w-1/3">
+                                    <label for="si" class="block text-gray-700 font-medium mb-2">
+                                        <input type="checkbox" id="si" name="si" value="si" class="mr-2" required>Sí
+                                    </label>
+                                </div>
+                                <div class="px-2 w-1/3">
+                                    <label for="no" class="block text-gray-700 font-medium mb-2">
+                                        <input type="checkbox" id="no" name="no" value="no" class="mr-2" required">No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message"
+                                class="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
+                                rows="5"></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium mb-2">Aceptación de condiciones: </label>
+                            <div class="flex flex-wrap -mx-2">
+                                <div class="px-2 w-1/3">
+                                    <label for="acepto" class="block text-gray-700 font-medium mb-2">
+                                        <input type="checkbox" id="acepto" name="acepto" value="acpeto" class="mr-2" required>Acepto
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button
+                                class="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
+                                Book Appointment
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Interactive Scripts (Theme Toggle & Mobile Menu) -->
+    <script>
+        // Dark Mode Toggle
+        const toggleBtn = document.getElementById('theme-toggle');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark-mode');
+                const isDark = document.documentElement.classList.contains('dark-mode');
+                toggleBtn.textContent = isDark ? '☼' : '☾';
+            });
+        }
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                mobileBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+            });
+            // Close mobile menu when clicking any nav item
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
