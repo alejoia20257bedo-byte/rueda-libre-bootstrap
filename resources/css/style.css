@@ -13,11 +13,11 @@
   /* ==========================================
      2. Familias tipográficas con fuentes de respaldo (fallbacks)
      ========================================== */
-  /* Tipografía para encabezados/títulos */
-  --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Tipografía para encabezados/títulos (igual a prototipo.html) */
+  --font-heading: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   
-  /* Tipografía para cuerpo de texto */
-  --font-body: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+  /* Tipografía para cuerpo de texto y especificaciones (igual a prototipo.html) */
+  --font-body: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   /* ==========================================
      3. Escala de espaciado en rem (al menos 3 tamaños)
@@ -34,6 +34,15 @@
    ========================================== */
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
 
 /* -------------------------------------------------------------------------------- */
@@ -61,7 +70,6 @@
 }
 
 .hero-description {
-  /* font-family: var(--font-body); */
   font-size: 1.25rem;
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.9);
@@ -145,21 +153,6 @@
   background: linear-gradient(135deg, #faebd3 0%, #4f52ee 100%);
 }
 
-.title-quienes-somos {
-  font-family: var(--font-heading, sans-serif);
-  font-weight: 700;
-  color: var(--rl-dark, #1b1f23);
-  margin-bottom: 1rem;
-}
-
-.content-quienes-somos {
-  font-family: var(--font-body, sans-serif);
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #212529;
-  max-width: 55ch;
-}
-
 .quienes-somos-img {
   max-height: 420px;
   object-fit: cover;
@@ -174,19 +167,11 @@
   background-color: #ffffff;
 }
 
-.nuestros-servicios {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-}
-
 .beneficios-alquilar {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  /* margin: 40px 0; */
   padding: 40px 0;
-  align-items: center;
   background: linear-gradient(135deg, #0d458f 0%, #bdbefb 100%);
   width: 100%;
   color: white;

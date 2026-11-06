@@ -352,4 +352,88 @@ Mapa Footer (index.html) Iframe estático 600x400;           ratio ratio-4x3 / r
                          desalineado en móviles.            totalmente adaptable a cualquier pantalla.
 ================================================================================
 Fin de la bitácora - Fase 2 completada exitosamente.
+
+
+================================================================================
+   FASE 3: HOMOLOGACIÓN TIPOGRÁFICA Y DEPURACIÓN DE CLASES EN STYLE.CSS
+                (index.html, tarifas.html, reservas.html, style.css)
+================================================================================
+
+1. RESUMEN DE LA FASE
+--------------------------------------------------------------------------------
+Se homologaron las familias tipográficas en todas las páginas principales del
+sitio web (index.html, tarifas.html y reservas.html) utilizando la combinación
+establecida en prototipo.html:
+- Montserrat: Para encabezados (h1 a h6), títulos principales y texto de display.
+- Open Sans: Para el cuerpo de texto, párrafos, tablas, formularios y especificaciones.
+
+Asimismo, se realizó una auditoría y limpieza en resources/css/style.css,
+eliminando clases redundantes o innecesarias que generaban sobrecarga o conflictos
+de maquetación.
+
+
+2. CAMBIOS REALIZADOS
+--------------------------------------------------------------------------------
+A) Carga de Google Fonts:
+   - Se integraron enlaces a Google Fonts (<link rel="preconnect"> y <link rel="stylesheet">)
+     en index.html, tarifas.html y reservas.html para cargar Montserrat (300..900)
+     y Open Sans (300..800).
+
+B) Actualización de Variables y Reglas Base en style.css:
+   - Se redefinieron las variables CSS en :root:
+     --font-heading: "Montserrat", -apple-system, BlinkMacSystemFont, ...
+     --font-body: "Open Sans", -apple-system, BlinkMacSystemFont, ...
+   - Se definieron reglas globales de herencia tipográfica:
+     body { font-family: var(--font-body); color: var(--color-dark); }
+     h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
+   - Con esto, todos los títulos y contenidos en todas las páginas adoptan
+     automáticamente las fuentes correspondientes sin necesidad de clases
+     o estilos en línea redundantes.
+
+C) Eliminación de Clases Innecesarias en style.css:
+   - .title-quienes-somos: Eliminada. Era una clase creada únicamente para asignar
+     la tipografía de título al <h2> de ¿Quiénes somos?, la cual ahora aplica
+     globalmente.
+   - .content-quienes-somos: Eliminada. Aplicaba de forma redundante la tipografía
+     de cuerpo de texto y márgenes que se resuelven con las clases utilitarias
+     de Bootstrap y la regla global de body.
+   - .nuestros-servicios: Eliminada. Solo contenía "min-height: 80vh; display: flex;
+     align-items: center;", regla que provocaba el desalineamiento horizontal
+     del <h2> y el contenedor de tarjetas. La sección ahora fluye limpiamente con
+     el espaciado responsivo nativo de Bootstrap.
+   - Limpieza de código comentado y propiedades duplicadas en .hero-description
+     y .beneficios-alquilar.
+
+D) Limpieza de Estilos en Línea y Responsividad en HTML:
+   - En tarifas.html y reservas.html se retiraron los estilos en línea repetitivos
+     style="font-family: var(--font-heading);" en <h1> y <h2>.
+   - En tarifas.html y reservas.html se homologó el contenedor del iframe de
+     Google Maps en el footer con la clase responsiva "ratio ratio-4x3 ratio-md-16x9".
+
+
+3. TABLA COMPARATIVA ANTES Y DESPUÉS (FASE 3)
+--------------------------------------------------------------------------------
+CRITERIO                 ANTES                              DESPUÉS
+--------------------------------------------------------------------------------
+Fuentes en index,        Variables Inter / Merriweather     Montserrat (encabezados) y
+tarifas y reservas       declaradas pero no importadas      Open Sans (cuerpo/specs)
+                         desde Google Fonts.                cargadas vía Google Fonts.
+
+Herencia de Títulos      Estilos en línea manuales          Regla global h1-h6 con
+                         style="font-family: var(...)"      var(--font-heading) aplicada
+                         en múltiples <h1> y <h2>.          automáticamente en todas partes.
+
+Clase .title-quienes-    Definida en style.css para         Eliminada de style.css; <h2> usa
+somos                    sobrescribir tipografía.           herencia limpia de encabezado.
+
+Clase .content-quienes-  Definida en style.css para         Eliminada de style.css; <p> usa
+somos                    sobrescribir fuente y ancho.       clases estándar de Bootstrap.
+
+Clase .nuestros-         Regla rígida flex/min-height       Eliminada de style.css; flujo
+servicios                que creaba conflictos de layout.   natural y responsivo.
+
+Iframe Mapas (Tarifas    Dimensiones fijas 600x400          Contenedor ratio ratio-4x3 /
+y Reservas)              que desbordaban en móviles.        ratio-md-16x9 totalmente fluido.
+================================================================================
+Fin de la bitácora - Fase 3 completada exitosamente.
 ================================================================================
