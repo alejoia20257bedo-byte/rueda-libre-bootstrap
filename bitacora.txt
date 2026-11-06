@@ -163,9 +163,193 @@ Botón en Navbar         Decía "Nuevo" (ambiguo).            Dice "Reservar" (C
 Tablas de Tarifas       Secciones fragmentadas; tabla       Secciones unificadas por tema con
                         oscura plana.                       table-hover y align-middle.
 ================================================================================
-Fin de la bitácora.
+Fin de la bitácora anterior.
 
 
+================================================================================
+   FASE 2: CORRECCIÓN DE BUGS, RESPONSIVIDAD Y TIPOGRAFÍAS (PLAY CDN & FONTS)
+                   index.html y nocturna/prototipo.html
+================================================================================
+
+1. RESUMEN DE LA FASE
+--------------------------------------------------------------------------------
+En esta etapa se auditaron y corrigieron los fallos técnicos, errores de
+maquetación, accesibilidad y problemas de diseño responsivo presentes en
+index.html y nocturna/prototipo.html.
+
+Se siguieron rigurosamente las pautas establecidas:
+- No alterar la paleta de colores existente.
+- En nocturna/prototipo.html, integrar exclusivamente el script Play CDN oficial
+  de Tailwind CSS (https://cdn.tailwindcss.com) y configurar las tipografías
+  de Google Fonts solicitadas: Montserrat (títulos/display) y Open Sans
+  (cuerpo de texto y especificaciones técnicas).
+- Garantizar que ambas páginas se adapten fluidamente a dispositivos móviles,
+  tablets y pantallas de escritorio.
 
 
-Tailwind CSS uses Just-In-Time (JIT) compilation / Ahead-of-Time tree-shaking. Unlike Bootstrap or the Play CDN (which injects styles in runtime in the browser), the Tailwind CLI scans all source files (.html, .js, etc.) looking for class names that match Tailwind's pattern syntax. Only utility classes actively detected in the source code are generated in output.css. Because bg-pink-500 is never used in index.html, the compiler never generates it, keeping production CSS bundles tiny (often < 15 KB).
+2. DETALLE DE ERRORES CORREGIDOS EN INDEX.HTML
+--------------------------------------------------------------------------------
+1) Clase inexistente en Diapositiva 2 del Carrusel:
+   - Bug: La segunda tarjeta de promoción contenía la clase "fg-contrast-successe",
+     la cual no existe en Bootstrap ni en CSS personalizado, dejando la tarjeta
+     sin el fondo contextual correspondiente.
+   - Solución: Se corrigió a "bg-success-subtle". Asimismo, se ajustó el relleno a
+     "p-4 p-md-5" en todas las diapositivas para evitar que el texto quede apretado
+     en pantallas móviles estrechas (<360px).
+
+2) Colapso y desalineación en "Nuestros Servicios":
+   - Bug: El elemento <h2> de la sección estaba por fuera de <div class="container">,
+     mientras que la clase contenedora .nuestros-servicios tiene en CSS la regla
+     "display: flex; align-items: center;". Por defecto en flexbox (flex-direction: row),
+     el <h2> y el contenedor de tarjetas quedaban en disposición horizontal
+     lado a lado en lugar de apilarse verticalmente, quebrando la lectura.
+   - Solución: Se reubicó el <h2> dentro del contenedor principal y se agregó
+     "py-5" a la sección para otorgar un respiro vertical proporcional.
+
+3) Falta de separación móvil en "Beneficios de alquilar":
+   - Bug: La fila <div class="row align-items-center"> carecía de canaleta (gutter).
+     Al colapsar en pantallas móviles a una sola columna (col-12), la imagen
+     quedaba pegada directamente a la lista de texto superior sin margen de respiro.
+   - Solución: Se aplicó la clase "g-4" a la fila.
+
+4) Clase con espacio y espaciado rígido en "¿Cómo alquilar?":
+   - Bug: La sección tenía un espacio inicial erróneo en su clase (' class=" como-alquilar"'),
+     dos etiquetas rígidas <br><br> entre el título y la cuadrícula, y carecía
+     de padding vertical responsivo cuando las cuatro tarjetas se apilaban en móviles.
+   - Solución: Se limpió la clase a "como-alquilar py-5", se eliminaron las
+     etiquetas <br><br> y se aplicó la clase "mb-4 mb-md-5" al encabezado.
+
+5) Falta de espaciado vertical en "¿Por qué Rueda Libre?":
+   - Bug: La sección tenía "min-height: 80vh" con display flex sin padding vertical.
+     Al apilarse las 4 columnas y la barra inferior de llamada a la acción (CTA)
+     en móviles, el contenido sobrepasaba los 80vh tocando los bordes superior e inferior.
+   - Solución: Se agregó "py-5" a la sección.
+
+6) Iframe de Google Maps en el Footer:
+   - Bug: El <iframe> poseía atributos estáticos de ancho y alto (width="600" height="400"),
+     y su contenedor no tenía ancho responsivo, causando saltos y desalineación en pantallas
+     móviles donde el enlace de texto quedaba desfasado a la derecha.
+   - Solución: Se envolvió el iframe en un contenedor con "w-100" y la clase nativa
+     de Bootstrap "ratio ratio-4x3 ratio-md-16x9", con estilo max-width de 600px,
+     logrando un mapa 100% responsivo en cualquier resolución.
+
+
+3. DETALLE DE ERRORES CORREGIDOS EN NOCTURNA/PROTOTIPO.HTML
+--------------------------------------------------------------------------------
+1) Motor Tailwind y Play CDN:
+   - Bug: Se estaba cargando "@tailwindcss/browser@4" en lugar del script Play CDN
+     oficial de Tailwind CSS, impidiendo la configuración declarativa mediante
+     tailwind.config en el HTML.
+   - Solución: Se implementó exclusivamente el script oficial Play CDN:
+     <script src="https://cdn.tailwindcss.com"></script>.
+
+2) Configuración de Fuentes de Google (Montserrat & Open Sans):
+   - Bug: El archivo incluía dos etiquetas @import duplicadas y desordenadas en
+     un bloque <style>, sin mapeo de utilidades de Tailwind.
+   - Solución:
+     a) Se conectó a Google Fonts mediante <link rel="preconnect"> y carga
+        optimizada de familias: Montserrat (pesos 300 a 900) y Open Sans (pesos 300 a 800).
+     b) En tailwind.config se extendieron las familias tipográficas para que la
+        fuente sans por defecto sea "Open Sans" (utilizada en cuerpo de texto,
+        etiquetas y especificaciones técnicas / specs), y "heading" / "display"
+        correspondan a "Montserrat".
+     c) Se aplicaron las reglas globales de CSS y utilidades (.font-heading) para
+        todos los encabezados (h1 a h6).
+
+3) Desbordamiento y altura fija en el Header Hero:
+   - Bug: El <header> tenía "height: 70vh" inline rígido. En dispositivos móviles,
+     el contenido (insignia + título grande + subtítulo + datos destacados)
+     excedía los 70vh de alto, recortándose y colisionando con la sección siguiente.
+   - Solución: Se cambió por "min-height: 70vh" con clases utilitarias de centrado
+     (min-h-[70vh] flex flex-col justify-center). El tamaño del título se adaptó
+     fluidamente con "text-4xl sm:text-6xl lg:text-7xl font-heading".
+
+4) Navegación y Menú Móvil en la Barra de Navegación:
+   - Bug:
+     a) El enlace del logotipo apuntaba a "/" (lo cual falla en servidores locales
+        o subrutas de proyecto). Se corrigió a "../index.html".
+     b) El enlace "Cómo-funciona" tenía href="#" sin destino funcional.
+     c) El enlace "Inscribete" apuntaba a "/login" (ruta no existente). Se corrigió
+        a "../reservas.html".
+     d) El botón de cambio de tema era una etiqueta <a href="#secundario">, lo que
+        provocaba saltos de anclaje indebidos en la URL. Se cambió a <button type="button">.
+     e) En dispositivos móviles (< md) los enlaces de navegación desaparecían
+        ("hidden md:flex") sin ningún botón o mecanismo para que el usuario accediera a ellos.
+   - Solución: Se diseñó e implementó un botón hamburguesa accesible con su menú
+     desplegable móvil interactivo (#mobile-menu) completamente funcional.
+
+5) Centrado y especificaciones en la Sección "Nuestras Rutas":
+   - Bug:
+     a) El contenedor utilizaba "max-w-8xl", clase que no existe en el estándar
+        de Tailwind, y carecía de "mx-auto", provocando que en pantallas anchas
+        las tarjetas quedaran desalineadas a la izquierda.
+     b) En las tarjetas, los botones tenían enlace a "#inscribete" (ancla inexistente).
+        Se corrigieron hacia "../reservas.html".
+     c) En tablets (pantallas medianas), una grilla fija de 3 columnas comprimía
+        excesivamente los datos técnicos (distancia, duración, encuentro). Se adaptó
+        a "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" con la tercera tarjeta
+        en "md:col-span-2 lg:col-span-1" para un balance perfecto.
+
+6) Sección "¿Cómo funciona?":
+   - Bug:
+     a) Carecía de atributo id="como-funciona", imposibilitando la navegación desde el navbar.
+     b) Poseía "min-h-screen", dejando un vacío vertical gigante e innecesario en móviles.
+     c) La etiqueta SVG tenía un namespace inválido ('xmlns="http://w3.org"').
+     d) El padding interno "px-10" provocaba desbordamiento en teléfonos estrechos (<=360px).
+   - Solución: Se asignó id="como-funciona", espaciado proporcional "py-12 sm:py-20",
+     namespace oficial 'xmlns="http://www.w3.org/2000/svg"' y acolchado responsivo
+     "px-6 py-12 sm:px-12 sm:py-16".
+
+7) Sección "Únete a nuestra comunidad":
+   - Bug: El SVG radial decorativo tenía únicamente "-translate-x-1/2", descentrándose
+     en pantallas pequeñas. Se añadió "-translate-y-1/2" y el id="inscribete".
+
+8) Elemento Footer anidado inválido y clases inexistentes:
+   - Bug: La estructura HTML contenía un footer dentro de otro footer:
+     "<footer><footer class="...">...</footer></footer>", violando la especificación semántica.
+   - Bug: La clase "focus:ring-offset-sky-999" contenía un tono no existente en Tailwind.
+   - Bug: En pantallas móviles estrechas (320px), el botón con "px-12 py-5" generaba
+     desbordamiento lateral, y el salto de línea <br> en el título rompía frases de forma antiestética.
+   - Solución: Se eliminó el footer duplicado exterior, se corrigió el foco a
+     "focus:ring-offset-blue-600", se ajustó el padding del botón a "px-8 sm:px-12 py-4 sm:py-5"
+     y el salto de línea a '<br class="hidden sm:inline">'.
+
+
+4. TABLA COMPARATIVA ANTES Y DESPUÉS (FASE 2)
+--------------------------------------------------------------------------------
+CRITERIO                 ANTES                              DESPUÉS
+--------------------------------------------------------------------------------
+CDN en prototipo.html    @tailwindcss/browser@4             Play CDN oficial
+                         (incompatible con tailwind.config). (https://cdn.tailwindcss.com).
+
+Tipografías Prototipo    @import duplicados sin aplicar     Montserrat (h1-h6 / display)
+                         especificaciones en Tailwind.      y Open Sans (body y specs) vía
+                                                            Google Fonts y tailwind.config.
+
+Carrusel index.html      Clase rota "fg-contrast-successe"  "bg-success-subtle" y padding
+                         y padding rígido p-5.              responsivo "p-4 p-md-5".
+
+Nuestros Servicios       <h2> fuera de contenedor; flexbox  <h2> dentro de contenedor con py-5;
+(index.html)             alineaba título y tarjetas en fila. flujo vertical limpio y centrado.
+
+Navegación Móvil         Sin menú móvil; enlaces ocultos;   Botón hamburguesa accesible y
+(prototipo.html)         href="/", href="/login" rotos;     menú colapsable interactivo con
+                         theme-toggle con ancla <a href>.   rutas relativas válidas y <button>.
+
+Hero Prototipo           height: 70vh fijo (desbordaba      min-height: 70vh fluido con
+                         en pantallas móviles).             título escalable text-4xl a 7xl.
+
+Rutas Prototipo          max-w-8xl sin mx-auto; botones     max-w-7xl mx-auto centrado; grid
+                         con anclas inactivas (#inscribete). adaptativa y enlaces a reservas.
+
+¿Cómo funciona?          min-h-screen con vacío excesivo;   py-12 sm:py-20; id="como-funciona";
+                         xmlns="http://w3.org" erróneo.     xmlns SVG válido y padding fluido.
+
+Footer Prototipo         <footer> duplicado anidado;       Semántica limpia con un solo
+                         focus:ring-offset-sky-999 inexistente. <footer> y clases Tailwind válidas.
+
+Mapa Footer (index.html) Iframe estático 600x400;           ratio ratio-4x3 / ratio-md-16x9
+                         desalineado en móviles.            totalmente adaptable a cualquier pantalla.
+================================================================================
+Fin de la bitácora - Fase 2 completada exitosamente.
+================================================================================
