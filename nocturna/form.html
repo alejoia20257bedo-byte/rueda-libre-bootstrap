@@ -69,11 +69,9 @@
                 <div class="hidden md:flex md:items-center md:justify-center md:gap-5">
                     <a aria-current="page"
                         class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                        href="#rutas">Ver rutas</a>
+                        href="./prototipo.html#rutas">Ver rutas</a>
                     <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                        href="#como-funciona">Cómo funciona</a>
-                    <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                        href="../index.html">Home</a>
+                        href="./prototipo.html#como-funciona">Cómo funciona</a>
                 </div>
 
                 <!-- Action Controls (Theme Toggle & CTA) -->
@@ -139,136 +137,179 @@
     </header>
 
     <main>
-        <section>
-            <div class="flex items-center justify-center p-12">
-                <!-- Author: FormBold Team -->
-                <div class="mx-auto w-full max-w-[550px] bg-white">
-                    <form>
-                        <div class="mb-5">
-                            <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
-                                Nombre completo
-                            </label>
-                            <input type="text" name="name" id="name" placeholder="Nombre completo" required minlength="3"
-                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                        </div>
-                        <div class="mb-5">
-                            <label for="phone" class="mb-3 block text-base font-medium text-[#07074D]">
-                                Número de celular
-                            </label>
-                            <input type="tel" name="phone" id="phone" placeholder="El celular debe tener 10 dígitos y comenzar por 3" required pattern="3[0-9]{9}"
-                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                        </div>
-                        <div class="mb-5">
-                            <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
-                                Correo electrónico
-                            </label>
-                            <input type="email" name="email" id="email" placeholder="Escrribe tu Email" required
-                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                        </div>
-                        <div class="col-md-4">
-                            <label for="validationPlan" class="mb-3 block text-base font-medium text-[#07074D]">Escoge
-                                tu ruta:</label>
-                            <select class="form-select" id="validationPlan" required>
-                                <option value="">Abre el panel de opciones</option>
-                                <option value="1">Luces del Centro</option>
-                                <option value="2">Miradores de la Ciudad</option>
-                                <option value="3">Luna en Las Palmas</option>
-                            </select>
-                        </div>
-                        <div class="-mx-3 flex flex-wrap">
-                            <div class="w-full px-3 sm:w-1/2">
-                                <div class="mb-5">
-                                    <label for="date" class="mb-3 block text-base font-medium text-[#07074D]">
-                                        Fecha
-                                    </label>
-                                    <input type="date" name="date" id="date" min="2026-11-07" required
-                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                                </div>
-                            </div>
-                            <div class="w-full px-3 sm:w-1/2">
-                                <div class="mb-5">
-                                    <label for="time" class="mb-3 block text-base font-medium text-[#07074D]">
-                                        Horario
-                                    </label>
-                                    <input type="time" name="time" id="time" required
-                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                                </div>
-                            </div>
-                        </div>
+        <section id="inscripcion" class="py-16 bg-slate-50 dark:bg-slate-900 transition-colors">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6">
 
-                        <div class="mb-5">
-                            <label for="numAcompa" class="mb-3 block text-base font-medium text-[#07074D]">
-                                Número de acompañantes
-                            </label>
-                            <input type="number" name="numAcompa" id="numAcompa" required min="0" max="3"
-                                placeholder="Escribe el número de acompañantes"
-                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                        </div>
+                <!-- Header -->
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                        Inscripción a la Rueda
+                    </h2>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                        Asegura tu cupo. Todos los campos marcados con asterisco (*) son obligatorios.
+                    </p>
+                </div>
 
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-medium mb-2">Nivel de experiencia</label>
-                            <div class="flex flex-wrap -mx-2">
-                                <div class="px-2 w-1/3">
-                                    <label for="novato" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="novato" name="color" value="novato" class="mr-2" required>Novato
-                                    </label>
-                                </div>
-                                <div class="px-2 w-1/3">
-                                    <label for="intermedio" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="intermedio" name="intermedio" value="intermedio"
-                                            class="mr-2" required>Intermedio
-                                    </label>
-                                </div>
-                                <div class="px-2 w-1/3">
-                                    <label for="avanzado" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="avanzado" name="avanzado" value="avanzado"
-                                            class="mr-2" required>Avanzado
-                                    </label>
-                                </div>
+                <form
+                    class="bg-white dark:bg-slate-800 p-6 sm:p-10 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-8">
+
+                    <!-- GRUPO 1: Datos Personales -->
+                    <fieldset class="space-y-4">
+                        <legend
+                            class="text-lg font-semibold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2 w-full">
+                            1. Datos Personales
+                        </legend>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <!-- Nombre Completo (Span 2 cols on md) -->
+                            <div class="md:col-span-2">
+                                <label for="name" class="block text-sm font-medium text-slate-800 dark:text-slate-200">
+                                    Nombre completo *
+                                </label>
+                                <input type="text" name="name" id="name" required minlength="3"
+                                    placeholder="Ej. Alejandro Bedoya"
+                                    class="mt-1.5 block w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 px-3.5 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                            </div>
+
+                            <!-- Correo -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-800 dark:text-slate-200">
+                                    Correo electrónico *
+                                </label>
+                                <input type="email" name="email" id="email" required placeholder="nombre@ejemplo.com"
+                                    class="mt-1.5 block w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 px-3.5 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                            </div>
+
+                            <!-- Celular -->
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-slate-800 dark:text-slate-200">
+                                    Número de celular *
+                                </label>
+                                <input type="tel" name="phone" id="phone" required pattern="3[0-9]{9}"
+                                    title="El celular debe tener 10 dígitos y comenzar por 3" placeholder="3001234567"
+                                    class="mt-1.5 block w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 px-3.5 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">10 dígitos iniciando en 3.
+                                </p>
                             </div>
                         </div>
+                    </fieldset>
 
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-medium mb-2">¿Tiene bicicleta propia?</label>
-                            <div class="flex flex-wrap -mx-2">
-                                <div class="px-2 w-1/3">
-                                    <label for="si" class="block text-gray-700 font-medium mb-2">
-                                        <input type="checkbox" id="si" name="si" value="si" class="mr-2" required>Sí
+                    <!-- GRUPO 2: Detalles de la Ruta -->
+                    <fieldset class="space-y-5">
+                        <legend
+                            class="text-lg font-semibold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2 w-full">
+                            2. Detalles de la Salida
+                        </legend>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <!-- Ruta -->
+                            <div>
+                                <label for="ruta" class="block text-sm font-medium text-slate-800 dark:text-slate-200">
+                                    Ruta *
+                                </label>
+                                <select name="ruta" id="ruta" required
+                                    class="mt-1.5 block w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 px-3.5 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                                    <option value="">Selecciona una ruta...</option>
+                                    <option value="luces-del-centro">Luces del Centro (Fácil)</option>
+                                    <option value="miradores">Miradores de la Ciudad (Medio)</option>
+                                    <option value="las-palmas">Luna en Las Palmas (Difícil)</option>
+                                </select>
+                            </div>
+
+                            <!-- Día de salida -->
+                            <div>
+                                <label for="dia" class="block text-sm font-medium text-slate-800 dark:text-slate-200">
+                                    Día de salida *
+                                </label>
+                                <select name="dia" id="dia" required
+                                    class="mt-1.5 block w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 px-3.5 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                                    <option value="">Selecciona el día...</option>
+                                    <option value="jueves">Jueves</option>
+                                    <option value="viernes">Viernes</option>
+                                    <option value="sabado">Sábado</option>
+                                </select>
+                            </div>
+
+                            <!-- Acompañantes -->
+                            <div>
+                                <label for="numAcompa"
+                                    class="block text-sm font-medium text-slate-800 dark:text-slate-200">
+                                    Número de acompañantes (0 a 3) *
+                                </label>
+                                <input type="number" name="numAcompa" id="numAcompa" required min="0" max="3" value="0"
+                                    class="mt-1.5 block w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 px-3.5 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                            </div>
+
+                            <!-- Bicicleta propia (Radio Group) -->
+                            <div>
+                                <span class="block text-sm font-medium text-slate-800 dark:text-slate-200 mb-2">
+                                    ¿Tienes bicicleta propia? *
+                                </span>
+                                <div class="mt-2.5 flex items-center gap-6">
+                                    <label class="inline-flex items-center text-sm text-slate-700 dark:text-slate-300">
+                                        <input type="radio" name="bici_propia" value="si" required
+                                            class="h-4 w-4 text-blue-600 focus:ring-blue-600 dark:bg-slate-700 border-slate-300 dark:border-slate-600">
+                                        <span class="ml-2">Sí</span>
+                                    </label>
+                                    <label class="inline-flex items-center text-sm text-slate-700 dark:text-slate-300">
+                                        <input type="radio" name="bici_propia" value="no" required
+                                            class="h-4 w-4 text-blue-600 focus:ring-blue-600 dark:bg-slate-700 border-slate-300 dark:border-slate-600">
+                                        <span class="ml-2">No (incluida en el plan)</span>
                                     </label>
                                 </div>
-                                <div class="px-2 w-1/3">
-                                    <label for="no" class="block text-gray-700 font-medium mb-2">
-                                        <input type="checkbox" id="no" name="no" value="no" class="mr-2" required">No
+                            </div>
+
+                            <!-- Nivel de experiencia (Full width on md) -->
+                            <div class="md:col-span-2">
+                                <span class="block text-sm font-medium text-slate-800 dark:text-slate-200 mb-2">
+                                    Nivel de experiencia en bici *
+                                </span>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    <label
+                                        class="flex items-center p-3 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer text-sm">
+                                        <input type="radio" id="principiante" name="nivel" value="principiante" required
+                                            class="h-4 w-4 text-blue-600 focus:ring-blue-600">
+                                        <span class="ml-2 text-slate-800 dark:text-slate-200">Principiante</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center p-3 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer text-sm">
+                                        <input type="radio" id="intermedio" name="nivel" value="intermedio" required
+                                            class="h-4 w-4 text-blue-600 focus:ring-blue-600">
+                                        <span class="ml-2 text-slate-800 dark:text-slate-200">Intermedio</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center p-3 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer text-sm">
+                                        <input type="radio" id="avanzado" name="nivel" value="avanzado" required
+                                            class="h-4 w-4 text-blue-600 focus:ring-blue-600">
+                                        <span class="ml-2 text-slate-800 dark:text-slate-200">Avanzado</span>
                                     </label>
                                 </div>
                             </div>
                         </div>
+                    </fieldset>
 
-                        <div class="mb-4">
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea id="message" name="message"
-                                class="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
-                                rows="5"></textarea>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-medium mb-2">Aceptación de condiciones: </label>
-                            <div class="flex flex-wrap -mx-2">
-                                <div class="px-2 w-1/3">
-                                    <label for="acepto" class="block text-gray-700 font-medium mb-2">
-                                        <input type="checkbox" id="acepto" name="acepto" value="acpeto" class="mr-2" required>Acepto
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- GRUPO 3: Términos y Confirmación -->
+                    <fieldset class="space-y-6 pt-2">
                         <div>
-                            <button
-                                class="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
-                                Book Appointment
+                            <label class="flex items-start text-sm text-slate-700 dark:text-slate-300 cursor-pointer">
+                                <input type="checkbox" id="condiciones" name="condiciones" required
+                                    class="mt-1 h-4 w-4 rounded text-blue-600 focus:ring-blue-600 dark:bg-slate-700 border-slate-300 dark:border-slate-600">
+                                <span class="ml-2.5">
+                                    Acepto las condiciones del servicio, uso de casco obligatorio y recomendaciones del
+                                    guía *
+                                </span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <button type="submit"
+                                class="w-full inline-flex items-center justify-center rounded-full bg-blue-600 px-8 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 dark:focus:ring-offset-slate-800">
+                                Completar inscripción
                             </button>
                         </div>
-                    </form>
-                </div>
+                    </fieldset>
+
+                </form>
             </div>
         </section>
     </main>
@@ -277,6 +318,28 @@
 
 
 
+<!-- Footer -------------------------------------------------------------- -->
+    <footer class="mt-16 sm:mt-20 xl:mt-32 mx-auto w-full relative text-center bg-blue-600 text-white">
+        <div class="px-6 py-8 md:py-14 xl:pt-20 xl:pb-12">
+            <h2 class="font-bold text-2xl sm:text-3xl xl:text-4xl leading-snug font-heading">
+                Alquiler de bicicletas y los mejores recorridos guiados<br class="hidden sm:inline"> para descubrir Medellín sobre dos ruedas.
+            </h2>
+            <a class="mt-8 xl:mt-12 px-8 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-medium leading-tight inline-block bg-blue-800 rounded-full shadow-xl border border-transparent hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-600 focus:ring-sky-400"
+                href="#rutas">
+                ¡Inicia hoy!
+            </a>
+            <div class="mt-10 sm:mt-14 xl:mt-20">
+                <nav class="flex flex-wrap justify-center text-base sm:text-lg font-medium">
+                    <div class="px-3 sm:px-5 py-2"><a href="../index.html#encuentranos" class="hover:underline">Contacto</a></div>
+                    <div class="px-3 sm:px-5 py-2"><a href="../tarifas.html" class="hover:underline">Tarifas</a></div>
+                    <div class="px-3 sm:px-5 py-2"><a href="../reservas.html" class="hover:underline">Reservas</a></div>
+                    <div class="px-3 sm:px-5 py-2"><a href="#rutas" class="hover:underline">Rutas</a></div>
+                    <div class="px-3 sm:px-5 py-2"><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a></div>
+                </nav>
+                <p class="mt-6 sm:mt-7 text-sm sm:text-base text-blue-100">© 2026 Medellín, Colombia</p>
+            </div>
+        </div>
+    </footer>
 
 
 
