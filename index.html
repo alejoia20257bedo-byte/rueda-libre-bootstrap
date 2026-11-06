@@ -8,7 +8,9 @@
     <!-- Google Fonts: Montserrat (Headings) & Open Sans (Body & Specs) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./resources/css/style.css">
@@ -32,9 +34,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./tarifas.html">Tarifas</a>
                     </li>
@@ -149,9 +148,10 @@
         <!-- Nuestros Servicios -->
         <section class="py-5" id="nuestros-servicios">
             <div class="container">
-                <h2 class="text-center mb-4">Nuestros Servicios</h2>
+                <h2 class="text-center mb-4 mb-md-5">Nuestros Servicios</h2>
+
                 <div
-                    class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 border-top border-bottom border-3 border-primary py-4">
+                    class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 border-top border-bottom border-3 border-primary py-4 py-md-5">
                     <div class="col text-center text-sm-start">
                         <h3 class="h6 fw-bold mb-1">Alquiler de Bicicletas</h3>
                         <p class="small text-muted mb-0">Alquiler de bicicletas por hora o día completo.</p>
@@ -199,32 +199,43 @@
         <!-- ¿Cómo alquilar? -->
         <section class="como-alquilar py-5">
             <div class="container text-center">
-                <h2 class="h4 mb-4 mb-md-5 text-center">¿Cómo alquilar?</h2>
-                <div class="row g-4">
+                <span class="text-primary fw-semibold text-uppercase small tracking-wide">Paso a paso</span>
+                <h2 class="h3 fw-bold mb-5 mt-1">¿Cómo alquilar?</h2>
+
+                <div class="row g-4 text-start">
+                    <!-- Paso 1 -->
                     <div class="col-12 col-sm-6 col-lg-3">
-                        <div
-                            class="p-3 bg-white border border-primary border-2 rounded-4 shadow-sm h-100 d-flex align-items-center justify-content-center">
-                            <p class="mb-0"><strong>Elige tu bicicleta:</strong> Explora nuestra selección de modelos.
-                            </p>
+                        <div class="step-card h-100 p-4 bg-white rounded-4 shadow-sm border-0 position-relative">
+                            <div class="step-badge mb-3">01</div>
+                            <h3 class="h6 fw-bold mb-2 text-dark">Elige tu bicicleta</h3>
+                            <p class="small text-muted mb-0">Explora nuestra selección de modelos disponibles.</p>
                         </div>
                     </div>
+
+                    <!-- Paso 2 -->
                     <div class="col-12 col-sm-6 col-lg-3">
-                        <div
-                            class="p-3 bg-white border border-primary border-2 rounded-4 shadow-sm h-100 d-flex align-items-center justify-content-center">
-                            <p class="mb-0"><strong>Escoge tu tarifa:</strong> Renta por horas, día completo o semana.
-                            </p>
+                        <div class="step-card h-100 p-4 bg-white rounded-4 shadow-sm border-0 position-relative">
+                            <div class="step-badge mb-3">02</div>
+                            <h3 class="h6 fw-bold mb-2 text-dark">Escoge tu tarifa</h3>
+                            <p class="small text-muted mb-0">Renta por horas, día completo o tarifas por semana.</p>
                         </div>
                     </div>
+
+                    <!-- Paso 3 -->
                     <div class="col-12 col-sm-6 col-lg-3">
-                        <div
-                            class="p-3 bg-white border border-primary border-2 rounded-4 shadow-sm h-100 d-flex align-items-center justify-content-center">
-                            <p class="mb-0"><strong>Muestra tu ID:</strong> Presenta tu cédula o pasaporte vigente.</p>
+                        <div class="step-card h-100 p-4 bg-white rounded-4 shadow-sm border-0 position-relative">
+                            <div class="step-badge mb-3">03</div>
+                            <h3 class="h6 fw-bold mb-2 text-dark">Muestra tu ID</h3>
+                            <p class="small text-muted mb-0">Presenta tu cédula o pasaporte vigente al personal.</p>
                         </div>
                     </div>
+
+                    <!-- Paso 4 -->
                     <div class="col-12 col-sm-6 col-lg-3">
-                        <div
-                            class="p-3 bg-white border border-primary border-2 rounded-4 shadow-sm h-100 d-flex align-items-center justify-content-center">
-                            <p class="mb-0"><strong>Rueda y entrega:</strong> Disfruta y devuélvela en nuestra sede.</p>
+                        <div class="step-card h-100 p-4 bg-white rounded-4 shadow-sm border-0 position-relative">
+                            <div class="step-badge mb-3">04</div>
+                            <h3 class="h6 fw-bold mb-2 text-dark">Rueda y entrega</h3>
+                            <p class="small text-muted mb-0">Disfruta tu ruta y devuélvela fácil en nuestra sede.</p>
                         </div>
                     </div>
                 </div>
@@ -429,7 +440,8 @@
         </div>
 
         <div class="w-100" style="max-width: 600px;">
-            <p class="text-center text-md-end"><a href="https://maps.app.goo.gl/RLCoxQNqv8WT2ADE7" target="_blank" rel="noopener noreferrer">Ver
+            <p class="text-center text-md-end"><a href="https://maps.app.goo.gl/RLCoxQNqv8WT2ADE7" target="_blank"
+                    rel="noopener noreferrer">Ver
                     ubicación en el mapa
                 </a></p>
             <div class="ratio ratio-4x3 ratio-md-16x9 shadow-sm rounded-3 overflow-hidden">

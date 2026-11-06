@@ -177,12 +177,62 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
+@media (min-width: 992px) {
+  #nuestros-servicios {
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+  }
+}
 .como-alquilar {
+  min-height: auto;
+  background: linear-gradient(135deg, #e9eff7 0%, #d6d7f7 100%);
+}
+
+@media (min-width: 992px) {
+  .como-alquilar {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Subtle step card polish */
+.step-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 3px solid transparent;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+  border-top-color: var(--bs-primary);
+}
+
+/* Number badge */
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: rgba(13, 110, 253, 0.1); /* Bootstrap primary tint */
+  color: var(--bs-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.tracking-wide {
+  letter-spacing: 0.08em;
+}
+
+/* .como-alquilar {
   min-height: 80vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #e9eff7 0%, #d6d7f7 100%);
-}
+} */
 .why-rueda-libre{
   min-height: 80vh;
   display: flex;
