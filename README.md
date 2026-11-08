@@ -125,7 +125,7 @@ Diseño equilibrado con barra de navegación flotante tipo cápsula (*backdrop-b
 ### 📱 Vista Móvil Responsiva (Mobile Layout · 360 px)
 Adaptación a pantallas ultra estrechas. Menú colapsable accesible, tipografía fluida `clamp()` sin desbordamiento horizontal, imágenes con `object-fit: contain` y botones de acción rápida (*Touch Friendly*):
 <p align="center">
-  <img src="docs/screenshots/mobile_preview.png" alt="Mobile Layout at 360px" width="380" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+  <img src="docs/screenshots/Screenshot 2026-11-08 at 12.58.09 PM.png" alt="Mobile Layout at 360px" width="380" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
 </p>
 
 ---
